@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@font-face {
+  font-family: "Attack";
+  src: url("/fonts/attack/Black.woff") format("woff");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "Attack";
+  src: url("/fonts/attack/Bold.woff") format("woff");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Attack";
+  src: url("/fonts/attack/ExtraBold.woff") format("woff");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Attack";
+  src: url("/fonts/attack/ExtraLight.woff") format("woff");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Attack";
+  src: url("/fonts/attack/Light.woff") format("woff");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Attack";
+  src: url("/fonts/attack/Medium.woff") format("woff");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Attack";
+  src: url("/fonts/attack/Regular.woff") format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Attack";
+  src: url("/fonts/attack/SemiBold.woff") format("woff");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Attack";
+  src: url("/fonts/attack/Thin.woff") format("woff");
+  font-weight: 100;
+}
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+body {
+  font-family: Lato, sans-serif;
+  font-optical-sizing: auto;
+  background: #190e17;
+  font-style: normal;
+  font-weight: 400;
+}
