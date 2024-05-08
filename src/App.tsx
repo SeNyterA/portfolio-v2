@@ -1,13 +1,12 @@
 import { Cursor1 } from '@/scripts/cursors/cursor1'
 import { Cursor4 } from '@/scripts/cursors/cursor4'
 import { initSlides } from '@/scripts/slide/demo2'
+import { initTypeShuffle } from '@/scripts/typeShuffle'
 import {
   IconBrandGithub,
   IconChevronDown,
   IconChevronUp
 } from '@tabler/icons-react'
-import { initTypeShuffle } from '@/scripts/typeShuffle'
-import gsap from 'gsap'
 import { useEffect } from 'react'
 import AboutMe from './components/AboutMe'
 import Experience from './components/Experience'
@@ -17,8 +16,8 @@ export default function App() {
   useEffect(() => {
     const slideshow = initSlides()
     new Cursor4('about-me')
-    // new Cursor1('skill')
-    // new Cursor1('experience')
+    new Cursor1('skill')
+    new Cursor1('experience')
 
     gsap.to('#progress-bar', {
       bottom: 0,
@@ -28,7 +27,7 @@ export default function App() {
       repeat: -1
     })
 
-    slideshow.on('onChange', e => console.log(e))
+    slideshow.on('onChange', (e: any) => console.log(e))
 
     initTypeShuffle()
   }, [])
