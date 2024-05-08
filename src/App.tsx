@@ -26,7 +26,7 @@ export default function App() {
 
         <div className='mr-10 flex h-full w-fit max-w-lg flex-col items-center justify-center bg-black p-8'>
           <p
-            className='text-3xl font-black uppercase z-50'
+            className='z-50 text-3xl font-black uppercase'
             style={{
               fontFamily: 'vortice-concept, sans-serif',
               filter: 'drop-shadow(0 0 4px #1528d2aa)',
@@ -35,7 +35,7 @@ export default function App() {
           >
             Nguyen Duc Khang
           </p>
-          <p className='mt-2 max-w-lg cursor-text text-justify text-lg font-light text-sky-400 z-50'>
+          <p className='z-50 mt-2 max-w-lg cursor-text text-justify text-lg font-light text-sky-400'>
             I'm a <span className='text-lime-500'>Full-Stack Developer</span>{' '}
             with <span className='text-lime-500'>2+ years</span> of experience
             in creating scalable web applications. My skills include{' '}
@@ -60,7 +60,7 @@ export default function App() {
         <div className='flex-1'></div>
       </div>
 
-      <div className='fixed left-16 top-8 flex h-14 items-center gap-2 z-50'>
+      <div className='fixed left-16 top-8 z-50 flex h-14 items-center gap-2'>
         <p
           className='text-lg uppercase text-gray-100'
           style={{
@@ -75,7 +75,7 @@ export default function App() {
       </div>
 
       <div
-        className='fixed bottom-16 left-16 font-thin text-gray-200 z-50'
+        className='fixed bottom-16 left-16 z-50 font-thin text-gray-200'
         style={{
           fontFamily: 'Attack, sans-serif',
           WebkitTextStroke: '0.5px white'
@@ -87,7 +87,7 @@ export default function App() {
         <p className='flex items-center'>Live workspace</p>
       </div>
 
-      <div className='fixed bottom-32 right-16 flex h-60 flex-col items-center justify-center rounded-full text-white z-50'>
+      <div className='fixed bottom-32 right-16 z-50 flex h-60 flex-col items-center justify-center rounded-full text-white'>
         <IconChevronUp size={16} className='text-gray-700' />
         <div
           className='relative h-full w-0.5 rounded bg-gray-700'

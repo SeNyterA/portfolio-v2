@@ -1,45 +1,51 @@
+import { Cursors } from './../cursors'
+import { isSafari, isTouchDevices } from './../utils'
 
-import { Cursors } from "./../cursors";
-import { isTouchDevices, isSafari } from "./../utils";
-export class Cursor4 extends Cursors{
-
+export class Cursor4 extends Cursors {
   constructor(index) {
-    super(index);
-    this.speed = !isTouchDevices ? !isSafari ? 0.4 : 0.9 : 1;
-    this.delta = !isTouchDevices ? !isSafari ? 0.15 : 0.05 : 0.2;
-    this.videoUrlDesktop =  new URL('/video/space_desktop.mp4', import.meta.url );
-    this.videoUrlMobile = new URL('/video/space_mobile.mp4',import.meta.url);
-    this.posterVideo = new URL('/images/cover.jpg?as=webp&width=1920',import.meta.url);
-    this.init();
-    this.loop();
+    super(index)
+    this.speed = !isTouchDevices ? (!isSafari ? 0.4 : 0.9) : 1
+    this.delta = !isTouchDevices ? (!isSafari ? 0.15 : 0.05) : 0.2
+    this.videoUrlDesktop = new URL('/video/space_desktop.mp4', import.meta.url)
+    this.videoUrlMobile = new URL('/video/space_mobile.mp4', import.meta.url)
+    this.posterVideo = new URL(
+      '/images/cover.jpg?as=webp&width=1920',
+      import.meta.url
+    )
+    this.init()
+    this.loop()
   }
 
   setParamsCursor() {
-    this.radiusCursorBack = 32;
-    this.radiusCursor = 16;
-    this.strokeColorCursorBack = getComputedStyle(document.body).getPropertyValue('--white')
-    this.fillCursor = getComputedStyle(document.body).getPropertyValue('--white');
-    this.maxSqueeze = 0.1;
-    this.accelerator = 1000;
+    this.radiusCursorBack = 32
+    this.radiusCursor = 16
+    this.strokeColorCursorBack = getComputedStyle(
+      document.body
+    ).getPropertyValue('--white')
+    this.fillCursor = getComputedStyle(document.body).getPropertyValue(
+      '--white'
+    )
+    this.maxSqueeze = 0.1
+    this.accelerator = 1000
   }
 
   setParamsParticles() {
-    this.nbrParticles = !isTouchDevices ? !isSafari ? 120 : 15 : 40;
-    this.radiusStart = this.diagonalWindow()/9;
-    this.radiusDiff = 0.2;
-    this.directionRadius = ">";
-    this.filterBackId = "filter-image-back";
-    this.filterCursorId = "filter-image-cursor";
-    this.particlesMaskId = "mask-particles";
-    this.idMask = "maskGradient";
-    this.fillParticles = `url('#${this.idMask}')`;
-    this.idCursorFilter = "filter-cursor";
-    this.filterParticles = `url('#${this.idCursorFilter}')`;
-    this.opacityGrayScale = 0.075;
+    this.nbrParticles = !isTouchDevices ? (!isSafari ? 120 : 15) : 40
+    this.radiusStart = this.diagonalWindow() / 9
+    this.radiusDiff = 0.2
+    this.directionRadius = '>'
+    this.filterBackId = 'filter-image-back'
+    this.filterCursorId = 'filter-image-cursor'
+    this.particlesMaskId = 'mask-particles'
+    this.idMask = 'maskGradient'
+    this.fillParticles = `url('#${this.idMask}')`
+    this.idCursorFilter = 'filter-cursor'
+    this.filterParticles = `url('#${this.idCursorFilter}')`
+    this.opacityGrayScale = 0.075
     this.maskCursor = {
-      videoDesktop : this.videoUrlDesktop.href,
-      videoMobile : this.videoUrlMobile.href
-    };
+      videoDesktop: this.videoUrlDesktop.href,
+      videoMobile: this.videoUrlMobile.href
+    }
   }
 
   drawMaskCursor() {
@@ -56,7 +62,6 @@ export class Cursor4 extends Cursors{
     </defs>
     ${this.drawVideoOrImage()}`
   }
-
 
   drawVideoOrImage() {
     if (!isSafari) {
