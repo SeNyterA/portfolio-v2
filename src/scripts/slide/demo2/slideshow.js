@@ -9,7 +9,7 @@ const PREV = -1;
  * @export
  */
 export class Slideshow {
-	
+
 	on(eventName, callback) {
 		if (!this.events[eventName]) {
 			this.events[eventName] = [];
@@ -19,6 +19,24 @@ export class Slideshow {
 
 	emit(eventName, data) {
 		const event = this.events[eventName];
+		if (event) {
+			event.forEach(callback => {
+				callback.call(null, data);
+			});
+		}
+	}
+
+	on(eventName, callback) {
+		if (!this.events[eventName]) {
+			this.events[eventName] = [];
+		}
+		this.events[eventName].push(callback);
+		// console.log(this.events[eventName].length)
+	}
+
+	emit(eventName, data) {
+		const event = this.events[eventName];
+		// console.log('first',event.length)
 		if (event) {
 			event.forEach(callback => {
 				callback.call(null, data);
@@ -82,7 +100,7 @@ export class Slideshow {
 	 */
 	next() {
 		this.navigate(NEXT);
-		this.emit('onChange', { direction: NEXT, current: this.current });
+
 	}
 
 	/**
@@ -91,7 +109,6 @@ export class Slideshow {
 	 */
 	prev() {
 		this.navigate(PREV);
-		this.emit('onChange', { direction: PREV, current: this.current });
 	}
 
 
@@ -105,12 +122,13 @@ export class Slideshow {
 		// Check if animation is already running
 		if (this.isAnimating) return false;
 		this.isAnimating = true;
-
 		// Update the current slide index based on direction
 		const previous = this.current;
 		this.current = direction === 1 ?
 			this.current < this.slidesTotal - 1 ? ++this.current : 0 :
 			this.current > 0 ? --this.current : this.slidesTotal - 1
+
+		this.emit('onStartChange', { direction, from: previous, to: this.current });
 
 		// Get the current and upcoming slides and their inner elements
 		const currentSlide = this.DOM.slides[previous];
@@ -128,6 +146,7 @@ export class Slideshow {
 				onComplete: () => {
 					// Reset animation flag
 					this.isAnimating = false;
+					this.emit('onEndChange', { direction, from: previous, toIndex: this.current });
 				}
 			})
 			// Defining animation steps

@@ -1,34 +1,70 @@
 import { Cursor1 } from '@/scripts/cursors/cursor1'
 import { Cursor4 } from '@/scripts/cursors/cursor4'
-import { initSlides } from '@/scripts/slide/demo2'
 import {
   IconBrandGithub,
   IconChevronDown,
   IconChevronUp
 } from '@tabler/icons-react'
 import gsap from 'gsap'
+import { Observer } from 'gsap/Observer'
 import { useEffect } from 'react'
 import AboutMe from './components/AboutMe'
 import Experience from './components/Experience'
 import Skills from './components/Skills'
+import { Slideshow } from './scripts/slide/demo2/slideshow'
 
+gsap.registerPlugin(Observer)
 export default function App() {
   useEffect(() => {
-    // initTypeShuffle()
-    const slideshow = initSlides()
-    new Cursor4('about-me')
-    new Cursor1('skill')
-    new Cursor1('experience')
+    let timeOut: NodeJS.Timeout
+    const slides = document.querySelector('.slides')
+    const slideshow = new Slideshow(slides as any)
 
-    gsap.to('#progress-bar', {
-      bottom: 0,
-      duration: 20,
+    const autoNext = gsap.to('#progress-bar', {
+      bottom: '0%',
+      duration: 10,
       ease: 'none',
       onRepeat: () => slideshow.next(),
       repeat: -1
     })
 
-    slideshow.on('onChange', (e: any) => console.log(e))
+    window.addEventListener('mousemove', () => {
+      clearTimeout(timeOut)
+      autoNext.pause()
+      timeOut = setTimeout(() => {
+        autoNext.resume()
+      }, 400)
+    })
+
+    Observer.create({
+      type: 'wheel,touch,pointer',
+      onDown: () => {
+        slideshow.prev()
+        autoNext.restart()
+      },
+      onUp: () => {
+        slideshow.next()
+        autoNext.restart()
+      },
+
+      wheelSpeed: -1,
+      tolerance: 10
+    })
+
+    slideshow.on('onStartChange', ({ from, to }: any) => {
+      console.log({
+        from,
+        to
+      })
+      gsap.to('#progress-bar-container', {
+        duration: 0.8,
+        clipPath: `polygon(0% 0%, 100% 0%, 100% ${to * 25}%, 0% ${to * 25}%, 0% ${(to + 1) * 25}%, 100% ${(to + 1) * 25}%, 100% 100%, 0% 100%)`
+      })
+    })
+
+    new Cursor4('about-me')
+    new Cursor1('skill')
+    new Cursor1('experience')
   }, [])
 
   return (
@@ -112,15 +148,19 @@ export default function App() {
             className='relative h-full w-0.5 rounded bg-gray-500'
             style={{
               clipPath:
-                'polygon(0% 0%, 100% 0%, 100% 25%, 0 25%, 0% 75%, 0 50%, 100% 50%, 100% 100%, 0% 100%)'
+                'polygon(0% 0%, 100% 0%, 100% 25%, 0% 25%, 0% 50%, 100% 50%, 100% 100%, 0% 100%)'
             }}
+            id='progress-bar-container'
           >
             <div
               className='absolute inset-x-0 top-0 bg-white'
               id='progress-bar'
             ></div>
           </div>
-          <div className='absolute left-1/2 top-1/4 flex h-1/4 translate-x-[-50%] items-center justify-center text-xs font-light text-white'>
+          <div
+            id='page-index'
+            className='absolute left-1/2 top-1/4 flex h-1/4 translate-x-[-50%] items-center justify-center text-xs font-light text-white'
+          >
             <span className='translate-x-[-4px] translate-y-[-4px]'>2</span>/
             <span className='translate-x-[4px] translate-y-[4px]'>4</span>
           </div>
