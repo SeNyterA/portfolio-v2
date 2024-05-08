@@ -1,9 +1,20 @@
 import { Cursor1 } from '@/scripts/cursors/cursor1'
 import { Cursor4 } from '@/scripts/cursors/cursor4'
 import { initSlides } from '@/scripts/slide/demo2'
-import { IconChevronDown, IconChevronUp } from '@tabler/icons-react'
+import {
+  IconBookDownload,
+  IconBrandGithub,
+  IconChevronDown,
+  IconChevronUp,
+  IconCloudDownload,
+  IconDownload,
+  IconDownloadOff,
+  IconFileDownload,
+  IconInnerShadowTopRightFilled
+} from '@tabler/icons-react'
 import { useEffect } from 'react'
 import AboutMe from './components/AboutMe'
+import Experience from './components/Experience'
 import Skills from './components/Skills'
 
 export default function App() {
@@ -31,13 +42,17 @@ export default function App() {
           />
           <Skills />
         </div>
+
+        <div className='slide absolute inset-0'>
+          <Experience />
+        </div>
         <div className='deco deco--4'></div>
         <div className='deco deco--4'></div>
       </div>
 
-      <div className='fixed left-16 top-8 z-50 flex h-14 items-center gap-2'>
+      <div className='fixed inset-x-16 top-8 z-50 flex h-14 items-center justify-between gap-2 text-white'>
         <p
-          className='text-lg uppercase text-gray-100'
+          className='uppercase text-gray-100'
           style={{
             fontFamily: 'vortice-concept, sans-serif',
             WebkitTextStroke: '0.5px white',
@@ -46,7 +61,17 @@ export default function App() {
         >
           Se:Nyter'A
         </p>
-        <div className='flex gap-2'></div>
+        <div className='flex gap-2 text-lime-500'>
+          {/* <IconFileDownload /> */}
+          <p
+            className='font-light'
+            onClick={() => {
+              window.open('/NguyenDucKhang.pdf')
+            }}
+          >
+            CV
+          </p>
+        </div>
       </div>
 
       <div
@@ -89,13 +114,13 @@ export default function App() {
           >
             Github
           </p>
-          {/* <IconBrandGithub /> */}
+          <IconBrandGithub size={16} className='rotate-[270deg]' />
         </div>
       </div>
 
-      {/* <div className='b-8 fixed bottom-8 right-[72px] z-50 flex items-center justify-center gap-1 text-yellow-400'>
-        <div className='mr-4 h-[1px] w-20 rounded bg-yellow-400'></div>
-        <IconInnerShadowTopRightFilled />
+      <div className='b-8 fixed left-2 z-50 flex translate-x-[-50%] items-center justify-center gap-1 text-yellow-400'>
+        {/* <div className='mr-4 h-[1px] w-20 rounded bg-yellow-400'></div> */}
+        {/* <IconInnerShadowTopRightFilled /> */}
         <p
           className='font-light'
           onClick={() => {
@@ -104,7 +129,8 @@ export default function App() {
         >
           Download CV
         </p>
-      </div> */}
+        {/* <div className='ml-4 h-[1px] w-20 rounded bg-yellow-400'></div> */}
+      </div>
     </>
   )
 }

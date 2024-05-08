@@ -63,7 +63,7 @@ export default function Skills() {
         </ul>
       </div>
 
-      <div className='detail-skill absolute bottom-8 right-36 flex h-fit w-[40%] flex-1 flex-col items-center justify-center text-justify font-light'>
+      <div className='detail-skill absolute bottom-24 right-36 flex h-fit w-[40%] flex-1 flex-col items-center justify-center text-justify font-light'>
         <p
           className='z-50 w-full text-2xl font-black uppercase leading-10 text-transparent'
           style={{
