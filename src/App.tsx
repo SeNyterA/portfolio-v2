@@ -1,8 +1,9 @@
-import { Cursor1 } from '@/scripts/cursors/cursor1'
-import { Cursor2 } from '@/scripts/cursors/cursor2'
-import { Cursor3 } from '@/scripts/cursors/cursor3'
 import { Cursor4 } from '@/scripts/cursors/cursor4'
-import { IconChevronDown, IconChevronUp } from '@tabler/icons-react'
+import {
+  IconChevronDown,
+  IconChevronUp,
+  IconInnerShadowTopRightFilled
+} from '@tabler/icons-react'
 import { useMemo } from 'react'
 
 export default function App() {
@@ -12,18 +13,14 @@ export default function App() {
     window.addEventListener('load', async () => {
       // await utils()
       new Cursor4(4)
-      // new Cursor2(2)
     })
   }, [])
 
   return (
     <>
-      <div className='flex h-screen w-screen items-center gap-20 px-8 py-8 text-gray-100'>
-        <div
-          className='absolute inset-0 z-10 h-screen w-screen'
-          id='cursor-4'
-        ></div>
+      <div className='fixed inset-0 z-10 h-screen w-screen' id='cursor' />
 
+      <div className='flex h-screen w-screen items-center gap-20 px-8 py-8 text-gray-100'>
         <div className='mr-10 flex h-full w-fit max-w-lg flex-col items-center justify-center bg-black p-8'>
           <p
             className='z-50 text-3xl font-black uppercase'
@@ -57,7 +54,9 @@ export default function App() {
             fast-paced and innovative team.
           </p>
         </div>
-        <div className='flex-1'></div>
+        <div className='flex-1'>
+          <IconInnerShadowTopRightFilled size={32} fill='yellow' />
+        </div>
       </div>
 
       <div className='fixed left-16 top-8 z-50 flex h-14 items-center gap-2'>

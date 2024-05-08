@@ -3,7 +3,7 @@ import { isTouchDevices } from './utils'
 
 export class Cursors {
   constructor(index) {
-    this.container = document.querySelector(`#cursor-${index}`)
+    this.container = document.querySelector(`#cursor`)
     // this.links = document.querySelectorAll(`nav[role="navigation"] a`);
     // this.link = this.links[index-1];
     // this.boundsLinks = this.link.getBoundingClientRect();
@@ -69,9 +69,8 @@ export class Cursors {
         height="${this.heightContainer}"
         viewbox="0 0 ${this.widthContainer} ${this.heightContainer}"
         preserveAspectRatio="${this.preserveAspectRatio || 'none'}"
-        style="background:${this.backColor || 'none'}; cursor:${
-          this.cursor ? 'default' : 'none'
-        };">
+        style="background:${this.backColor || 'none'}; cursor:${this.cursor ? 'default' : 'none'
+      };">
         ${this.gradientParticles ? this.drawGradient() : ''}
         ${this.maskCursor ? this.drawMaskCursor() : this.drawParticles()}
         ${this.drawTinyCursor()}
@@ -79,8 +78,8 @@ export class Cursors {
     this.svg = this.container.querySelector('svg')
     this.tinyCursor
       ? (this.nodeCursors = this.container.querySelectorAll(
-          '.tiny-cursor circle'
-        ))
+        '.tiny-cursor circle'
+      ))
       : null
     this.particles = Array.from(
       this.container.querySelectorAll('.particles circle')
@@ -98,9 +97,8 @@ export class Cursors {
   }
 
   drawTinyCursor() {
-    return `${
-      this.tinyCursor
-        ? `<g class="tiny-cursor">
+    return `${this.tinyCursor
+      ? `<g class="tiny-cursor">
         <circle
           r=${this.radiusCursorBack || 10}
           cx=${this.pos.x}
@@ -124,17 +122,16 @@ export class Cursors {
           style="transform-origin: ${this.pos.x}px ${this.pos.y}px">
         </circle>
      </g>`
-        : ''
-    }`
+      : ''
+      }`
   }
 
   setTinyCursor() {
-    this.rotate = `rotate(${
-      (Math.atan2(this.diff.y, this.diff.x) * 180) / Math.PI
-    }deg)`
+    this.rotate = `rotate(${(Math.atan2(this.diff.y, this.diff.x) * 180) / Math.PI
+      }deg)`
     this.squeeze = Math.min(
       Math.sqrt(Math.pow(this.diff.x, 2) + Math.pow(this.diff.y, 2)) /
-        this.accelerator,
+      this.accelerator,
       this.maxSqueeze
     )
     this.scale = `scale(${1 + this.squeeze},${1 - this.squeeze})`
@@ -168,11 +165,10 @@ export class Cursors {
           cx=${this.pos.x} cy=${this.pos.y}
           fill="${this.fillParticles || 'none'}"
           fill-opacity="${this.fillOpacityParticles || 1}"
-          stroke="${
-            this.strokeGradient
+          stroke="${this.strokeGradient
               ? `url(#${this.strokeGradient.idStrokeGradient})`
               : this.strokeColorParticles
-          }"
+            }"
           stroke-width="${this.strokeWidthParticles || 0}"
           stroke-opacity="${this.strokeOpacityParticles || 1}"
           id="${i}">
@@ -188,9 +184,8 @@ export class Cursors {
         particle.setAttribute('cx', this.pos.x)
         particle.setAttribute('cy', this.pos.y)
         particle.style.transitionProperty = 'cx,cy'
-        particle.style.transitionDuration = `${
-          this.transitionParticles.duration + i * this.transitionParticles.delay
-        }ms `
+        particle.style.transitionDuration = `${this.transitionParticles.duration + i * this.transitionParticles.delay
+          }ms `
         particle.style.transitionTimingFunction =
           this.transitionParticles.easing
       }
