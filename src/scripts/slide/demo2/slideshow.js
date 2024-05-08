@@ -1,5 +1,4 @@
 import gsap from 'gsap'
-
 /** Direction constants */
 const NEXT = 1;
 const PREV = -1;
@@ -18,7 +17,9 @@ export class Slideshow {
 	DOM = {
 		el: null,            // Main slideshow container
         slides: null,        // Individual slides
-        slidesInner: null    // Inner content of slides (usually images)
+        slidesInner: null,   // Inner content of slides (usually images)
+
+		deco: null,			 // Empty deco element between the slides
 	};
 	/**
      * Index of the current slide being displayed.
@@ -53,6 +54,9 @@ export class Slideshow {
 		
 		// Count total slides
 		this.slidesTotal = this.DOM.slides.length;
+
+		// Deco element
+		this.DOM.deco = this.DOM.el.querySelectorAll('.deco');
 	}
 
 	/**
@@ -97,51 +101,51 @@ export class Slideshow {
 		gsap
 		.timeline({
 			defaults: {
-				duration: 1.5, 
-				ease: 'power4.inOut'
-			},
-			onStart: () => {
-				// Add class to the upcoming slide to mark it as current
-				this.DOM.slides[this.current].classList.add('slide--current');
+				duration: 0.8,
+				ease: 'power3.inOut'
 			},
 			onComplete: () => {
-				// Remove class from the previous slide to unmark it as current
-                this.DOM.slides[previous].classList.remove('slide--current');
-                // Reset animation flag
+				// Reset animation flag
                 this.isAnimating = false;
 			}
 		})
 		// Defining animation steps
 		.addLabel('start', 0)
+
+		.fromTo(this.DOM.deco, {
+			yPercent: pos => pos ? -100 : 100,
+			autoAlpha: 1
+		}, {
+			yPercent: pos => pos ? -50 : 50
+		}, 'start')
 		.to(currentSlide, {
-			yPercent: -direction*100
+			scale: 1.1,
+			rotation: direction*2
 		}, 'start')
-		.to(currentInner, {
-			yPercent: direction*30,
-			startAt: {
-				transformOrigin: direction === NEXT ? '0% 100%' : '100% 0%',
-				rotation: 0
-			},
-			rotation: -direction*10,
-			scaleY: 2.5
-		}, 'start')
-		.to(upcomingSlide, {
-			startAt: {
-				yPercent: direction*100 
-			},
-			yPercent: 0
-		}, 'start')
-		.to(upcomingInner, {
-			startAt: {
-				transformOrigin: direction === NEXT ? '0% 0%' : '100% 100%',
-				yPercent: -direction*30, 
-				scaleY: 2.5, 
-				rotation: -direction*10
-			},
-			yPercent: 0,
-			scaleY: 1,
+
+		.addLabel('middle', '>')
+		.add(() => {
+			// Remove class from the previous slide to unmark it as current
+			this.DOM.slides[previous].classList.remove('slide--current');
+			// Add class to the upcoming slide to mark it as current
+			this.DOM.slides[this.current].classList.add('slide--current');
+		}, 'middle')
+		.to(this.DOM.deco, {
+			duration: 1.1,
+			ease: 'expo',
+			yPercent: pos => pos ? -100 : 100
+		}, 'middle')
+		
+		.fromTo(upcomingSlide, {
+			scale: 1.1,
+			rotation: direction*2
+		}, {
+			duration: 1.1,
+			ease: 'expo',
+			scale: 1,
 			rotation: 0
-		}, 'start');
+		}, 'middle');
+
 	}
 
 }

@@ -22,11 +22,7 @@ export const initSlides = () => {
     gsap.registerPlugin(Observer)
     const slides = document.querySelector('.slides');
     const slideshow = new Slideshow(slides);
-    console.log({
-        slides, slideshow
-    })
 
-    console.log(Observer)
     Observer.create({
         type: 'wheel,touch,pointer',
         onDown: () => slideshow.prev(),

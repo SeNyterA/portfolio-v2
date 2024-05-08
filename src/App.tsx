@@ -2,20 +2,11 @@ import { Cursor4 } from '@/scripts/cursors/cursor4'
 import { initSlides } from '@/scripts/slide/demo2'
 import { initTypeShuffle } from '@/scripts/typeShuffle'
 import { IconChevronDown, IconChevronUp } from '@tabler/icons-react'
-import { useEffect, useLayoutEffect } from 'react'
+import { useEffect } from 'react'
 import AboutMe from './components/AboutMe'
 import Skills from './components/Skills'
 
 export default function App() {
-  useLayoutEffect(() => {
-    // window.addEventListener('load', async () => {
-    // await utils()
-    // new Cursor4(4)
-    // initTypeShuffle()
-    // initSlides()
-    // })
-  }, [])
-
   useEffect(() => {
     initSlides()
     new Cursor4(4)
@@ -26,24 +17,14 @@ export default function App() {
     <>
       <div className='fixed inset-0 z-10 h-screen w-screen' id='cursor' />
       <div className='slides'>
-        <div className='slide relative h-full w-full'>
-          <div
-            className='slide__img'
-            style={{
-              backgroundImage: 'url(/img/6.jpg)'
-            }}
-          ></div>
+        <div className='slide'>
           <AboutMe />
         </div>
-        <div className='slide relative h-full w-full'>
-          <div
-            className='slide__img'
-            style={{
-              backgroundImage: 'url(/img/7.jpg)'
-            }}
-          ></div>
+        <div className='slide'>
           <Skills />
         </div>
+        <div className='deco deco--4'></div>
+        <div className='deco deco--4'></div>
       </div>
 
       <div className='fixed left-16 top-8 z-50 flex h-14 items-center gap-2'>
