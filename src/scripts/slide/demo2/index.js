@@ -31,4 +31,6 @@ export const initSlides = () => {
         wheelSpeed: -1,
         tolerance: 10
     });
+
+    return slideshow;
 }

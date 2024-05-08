@@ -1,19 +1,13 @@
 import { Cursor1 } from '@/scripts/cursors/cursor1'
-import { Cursor2 } from '@/scripts/cursors/cursor2'
-import { Cursor3 } from '@/scripts/cursors/cursor3'
 import { Cursor4 } from '@/scripts/cursors/cursor4'
 import { initSlides } from '@/scripts/slide/demo2'
 import {
-  IconBookDownload,
   IconBrandGithub,
   IconChevronDown,
-  IconChevronUp,
-  IconCloudDownload,
-  IconDownload,
-  IconDownloadOff,
-  IconFileDownload,
-  IconInnerShadowTopRightFilled
+  IconChevronUp
 } from '@tabler/icons-react'
+import { initTypeShuffle } from '@/scripts/typeShuffle'
+import gsap from 'gsap'
 import { useEffect } from 'react'
 import AboutMe from './components/AboutMe'
 import Experience from './components/Experience'
@@ -21,12 +15,22 @@ import Skills from './components/Skills'
 
 export default function App() {
   useEffect(() => {
-    initSlides()
+    const slideshow = initSlides()
     new Cursor4('about-me')
-    new Cursor1('skill')
-    new Cursor1('experience')
+    // new Cursor1('skill')
+    // new Cursor1('experience')
 
-    // initTypeShuffle()
+    gsap.to('#progress-bar', {
+      bottom: 0,
+      duration: 20,
+      ease: 'none',
+      onRepeat: () => slideshow.next(),
+      repeat: -1
+    })
+
+    slideshow.on('onChange', e => console.log(e))
+
+    initTypeShuffle()
   }, [])
 
   return (
@@ -112,7 +116,12 @@ export default function App() {
               clipPath:
                 'polygon(0% 0%, 100% 0%, 100% 25%, 0 25%, 0% 75%, 0 50%, 100% 50%, 100% 100%, 0% 100%)'
             }}
-          ></div>
+          >
+            <div
+              className='absolute inset-x-0 top-0 bg-white'
+              id='progress-bar'
+            ></div>
+          </div>
           <div className='absolute left-1/2 top-1/4 flex h-1/4 translate-x-[-50%] items-center justify-center text-xs font-light text-white'>
             <span className='translate-x-[-4px] translate-y-[-4px]'>2</span>/
             <span className='translate-x-[4px] translate-y-[4px]'>4</span>
