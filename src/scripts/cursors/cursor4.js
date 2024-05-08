@@ -81,7 +81,7 @@ export class Cursor4 extends Cursors {
 
   insertVideo() {
     return `
-    <video class="min-w-screen min-h-screen object-cover" controls="false" autoplay loop="true" muted crossorigin=anonymous poster=${this.posterVideo.href}>
+    <video class="min-w-[100%] min-h-screen object-cover" autoplay loop="true" muted crossorigin=anonymous poster=${this.posterVideo.href}>
       <source src="${!isTouchDevices ? this.maskCursor.videoDesktop : this.maskCursor.videoMobile}" type="video/mp4" />
     </video>`
   }

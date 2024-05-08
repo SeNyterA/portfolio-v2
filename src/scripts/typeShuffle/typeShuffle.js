@@ -158,7 +158,7 @@ export class TypeShuffle {
         let finished = 0;
 
         // clear all cells values
-        // this.clearCells();
+        this.clearCells();
         
         // cell's loop animation
         // each cell will change its value MAX_CELL_ITERATIONS times
