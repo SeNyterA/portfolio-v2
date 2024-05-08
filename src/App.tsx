@@ -2,10 +2,9 @@ import { Cursor4 } from '@/scripts/cursors/cursor4'
 import { initSlides } from '@/scripts/slide/demo2'
 import { initTypeShuffle } from '@/scripts/typeShuffle'
 import { IconChevronDown, IconChevronUp } from '@tabler/icons-react'
-import gsap from 'gsap'
-import { Observer } from 'gsap/Observer'
 import { useEffect, useLayoutEffect } from 'react'
 import AboutMe from './components/AboutMe'
+import Skills from './components/Skills'
 
 export default function App() {
   useLayoutEffect(() => {
@@ -34,19 +33,18 @@ export default function App() {
               backgroundImage: 'url(/img/6.jpg)'
             }}
           ></div>
-          <AboutMe/>
+          <AboutMe />
         </div>
-        <div className='slide'>
+        <div className='slide relative h-full w-full'>
           <div
             className='slide__img'
             style={{
-              backgroundImage: 'url(img/7.jpg)'
+              backgroundImage: 'url(/img/7.jpg)'
             }}
           ></div>
+          <Skills />
         </div>
       </div>
-      {/* <AboutMe />
-      <Skills /> */}
 
       <div className='fixed left-16 top-8 z-50 flex h-14 items-center gap-2'>
         <p
