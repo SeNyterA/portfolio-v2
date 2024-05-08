@@ -34,6 +34,96 @@ export default function AboutMe() {
           fast-paced and innovative team.
         </p>
       </div>
+      <div className='icons-inner flex flex-col h-full overflow-hidden z-50 shrink-0 gap-2'>
+        <img
+          src='/techs/react.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/nextjs.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/nestjs.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/firebase.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/redis.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/redux.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/react-query.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/tailwind.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/socket-io.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/mysql.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/mongo.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/typeorm.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/prisma.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/graphql.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/apollographql.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/vite.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/mantine.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/antd.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/material.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/docker.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/ec2.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+        <img
+          src='/techs/ngnix.png'
+          className='h-10 w-10 rounded p-2 bg-blend-luminosity 2xl:h-16 2xl:w-16'
+        />
+      </div>
       <div className='flex-1'>
         {/* <IconInnerShadowTopRightFilled size={32} fill='yellow' /> */}
       </div>

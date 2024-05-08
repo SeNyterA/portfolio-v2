@@ -1,4 +1,6 @@
 import { Cursor1 } from '@/scripts/cursors/cursor1'
+import { Cursor2 } from '@/scripts/cursors/cursor2'
+import { Cursor3 } from '@/scripts/cursors/cursor3'
 import { Cursor4 } from '@/scripts/cursors/cursor4'
 import { initSlides } from '@/scripts/slide/demo2'
 import {
@@ -20,8 +22,10 @@ import Skills from './components/Skills'
 export default function App() {
   useEffect(() => {
     initSlides()
-    new Cursor4('cursor4')
-    new Cursor1('cursor1')
+    new Cursor4('about-me')
+    new Cursor1('skill')
+    new Cursor1('experience')
+
     // initTypeShuffle()
   }, [])
 
@@ -31,19 +35,28 @@ export default function App() {
         <div className='slide absolute inset-0'>
           <div
             className='absolute inset-0 z-10 h-screen w-screen'
-            id='cursor4'
+            id='about-me'
           />
           <AboutMe />
         </div>
         <div className='slide absolute inset-0'>
-          <div
-            className='absolute inset-0 z-10 h-screen w-screen'
-            id='cursor1'
-          />
+          <div className='absolute inset-0 z-10 h-screen w-screen' id='skill' />
           <Skills />
         </div>
 
         <div className='slide absolute inset-0'>
+          <div
+            className='absolute inset-0 z-10 h-screen w-screen'
+            id='experience'
+          />
+          <Experience />
+        </div>
+
+        <div className='slide absolute inset-0'>
+          <div
+            className='absolute inset-0 z-10 h-screen w-screen'
+            id='cursor3'
+          />
           <Experience />
         </div>
         <div className='deco deco--4'></div>
@@ -58,13 +71,17 @@ export default function App() {
             WebkitTextStroke: '0.5px white',
             filter: 'drop-shadow(0 0 4px #1528d2aa)'
           }}
+
+          // style={{
+          //   fontFamily: '"Neon Spark", sans-serif'
+          // }}
         >
           Se:Nyter'A
         </p>
         <div className='flex gap-2 text-lime-500'>
           {/* <IconFileDownload /> */}
           <p
-            className='font-light'
+            className='cursor-pointer font-light'
             onClick={() => {
               window.open('/NguyenDucKhang.pdf')
             }}
@@ -106,7 +123,7 @@ export default function App() {
 
         <div className='mt-6 flex flex-col items-center justify-center gap-2 text-yellow-500'>
           <p
-            className='rotate-180 font-light'
+            className='rotate-180 font-thin'
             style={{
               writingMode: 'vertical-rl',
               fontFamily: 'Attack, sans-serif'
