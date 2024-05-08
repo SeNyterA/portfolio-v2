@@ -1,6 +1,6 @@
-import { isTouchDevices } from "./../utils";
 import { Cursors } from "./../cursors";
-export class Cursor1 extends Cursors{
+import { isTouchDevices } from "./../utils";
+export class Cursor1 extends Cursors {
 
   constructor(index) {
     super(index);
@@ -18,19 +18,19 @@ export class Cursor1 extends Cursors{
 
   setParamsParticles() {
     this.strokeGradient = {
-      idStrokeGradient : "gradient",
-      color2 : getComputedStyle(document.body).getPropertyValue('--primary'),
-      color1 : getComputedStyle(document.body).getPropertyValue('--secondary'),
+      idStrokeGradient: "gradient",
+      color2: getComputedStyle(document.body).getPropertyValue('--primary'),
+      color1: getComputedStyle(document.body).getPropertyValue('--secondary'),
     }
     this.strokeWidthParticles = 1.5;
     this.strokeOpacityParticles = .15;
     this.radiusDiff = 7;
-    this.radiusStart = this.radiusCursor*3;
+    this.radiusStart = this.radiusCursor * 3;
     this.nbrParticles = Math.round((this.diagonalWindow() + this.radiusDiff - this.radiusStart) / this.radiusDiff);
     this.transitionParticles = {
       duration: 18,
       delay: !isTouchDevices ? 4 : 14,
-      easing : "linear"
+      easing: "linear"
     };
   }
 }

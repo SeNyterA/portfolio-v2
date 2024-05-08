@@ -17,7 +17,6 @@ export class Cursors {
     this.tinyCursor = true;
     this.transitionParticles = false;
     this.cursor = false;
-    this.activeLinks();
     this.mousemoveCursor();
     window.addEventListener("resize", (e) => this.init());
   }
@@ -235,11 +234,4 @@ export class Cursors {
     );
   }
 
-  activeLinks() {
-    // this.activeClass = "active";
-    // for (const link of this.links) {
-    //   link.classList.remove(this.activeClass);
-    // }
-    // this.link.classList.add(this.activeClass);
-  }
 }

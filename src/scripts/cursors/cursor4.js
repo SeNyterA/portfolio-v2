@@ -7,9 +7,9 @@ export class Cursor4 extends Cursors{
     super(index);
     this.speed = !isTouchDevices ? !isSafari ? 0.4 : 0.9 : 1;
     this.delta = !isTouchDevices ? !isSafari ? 0.15 : 0.05 : 0.2;
-    this.videoUrlDesktop =  new URL('../../video/space_desktop.mp4', import.meta.url );
-    this.videoUrlMobile = new URL('../../video/space_mobile.mp4',import.meta.url);
-    this.posterVideo = new URL('../../images/cover.jpg?as=webp&width=1920',import.meta.url);
+    this.videoUrlDesktop =  new URL('/video/space_desktop.mp4', import.meta.url );
+    this.videoUrlMobile = new URL('/video/space_mobile.mp4',import.meta.url);
+    this.posterVideo = new URL('/images/cover.jpg?as=webp&width=1920',import.meta.url);
     this.init();
     this.loop();
   }
@@ -76,7 +76,7 @@ export class Cursor4 extends Cursors{
 
   insertVideo() {
     return `
-    <video width="100%" height="100%" controls="false" autoplay loop="true" muted crossorigin=anonymous poster=${this.posterVideo.href}>
+    <video class="min-w-screen min-h-screen object-cover" controls="false" autoplay loop="true" muted crossorigin=anonymous poster=${this.posterVideo.href}>
       <source src="${!isTouchDevices ? this.maskCursor.videoDesktop : this.maskCursor.videoMobile}" type="video/mp4" />
     </video>`
   }
