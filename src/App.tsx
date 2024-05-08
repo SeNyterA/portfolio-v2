@@ -12,6 +12,8 @@ import AboutMe from './components/AboutMe'
 import Experience from './components/Experience'
 import Skills from './components/Skills'
 
+// import gsap from 'gsap'
+
 export default function App() {
   useEffect(() => {
     const slideshow = initSlides()
