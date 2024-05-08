@@ -1,18 +1,22 @@
 import { Cursor4 } from '@/scripts/cursors/cursor4'
+import { initTypeShuffle } from '@/scripts/typeShuffle'
 import {
   IconChevronDown,
   IconChevronUp,
   IconInnerShadowTopRightFilled
 } from '@tabler/icons-react'
-import { useMemo } from 'react'
+import { useLayoutEffect } from 'react'
 
 export default function App() {
   console.count('App')
 
-  const cusror = useMemo(() => {
+  useLayoutEffect(() => {
     window.addEventListener('load', async () => {
       // await utils()
-      new Cursor4(4)
+      setTimeout(() => {
+        // new Cursor4(4)
+        initTypeShuffle()
+      }, 1000)
     })
   }, [])
 
@@ -20,7 +24,7 @@ export default function App() {
     <>
       <div className='fixed inset-0 z-10 h-screen w-screen' id='cursor' />
 
-      <div className='flex h-screen w-screen items-center gap-20 px-8 py-8 text-gray-100'>
+      <div className='flex h-screen w-screen items-center gap-20 px-8 py-8 text-gray-100 content'>
         <div className='mr-10 flex h-full w-fit max-w-lg flex-col items-center justify-center bg-black p-8'>
           <p
             className='z-50 text-3xl font-black uppercase'
