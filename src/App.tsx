@@ -1,6 +1,6 @@
+import { Cursor1 } from '@/scripts/cursors/cursor1'
 import { Cursor4 } from '@/scripts/cursors/cursor4'
 import { initSlides } from '@/scripts/slide/demo2'
-import { initTypeShuffle } from '@/scripts/typeShuffle'
 import { IconChevronDown, IconChevronUp } from '@tabler/icons-react'
 import { useEffect } from 'react'
 import AboutMe from './components/AboutMe'
@@ -9,18 +9,26 @@ import Skills from './components/Skills'
 export default function App() {
   useEffect(() => {
     initSlides()
-    new Cursor4(4)
-    initTypeShuffle()
+    new Cursor4('cursor4')
+    new Cursor1('cursor1')
+    // initTypeShuffle()
   }, [])
 
   return (
     <>
-      <div className='fixed inset-0 z-10 h-screen w-screen' id='cursor' />
-      <div className='slides'>
-        <div className='slide'>
+      <div className='slides relative'>
+        <div className='slide absolute inset-0'>
+          <div
+            className='absolute inset-0 z-10 h-screen w-screen'
+            id='cursor4'
+          />
           <AboutMe />
         </div>
-        <div className='slide'>
+        <div className='slide absolute inset-0'>
+          <div
+            className='absolute inset-0 z-10 h-screen w-screen'
+            id='cursor1'
+          />
           <Skills />
         </div>
         <div className='deco deco--4'></div>
@@ -47,10 +55,10 @@ export default function App() {
           fontFamily: 'Attack, sans-serif'
         }}
       >
-        <p className='flex items-center'>About me</p>
-        <p className='flex items-center'>Skills</p>
-        <p className='flex items-center'>Experience</p>
-        <p className='flex items-center'>Live workspace</p>
+        <p className='flex items-center opacity-70'>About me</p>
+        <p className='flex items-center uppercase text-lime-500'>Skills</p>
+        <p className='flex items-center opacity-70'>Experience</p>
+        <p className='flex items-center opacity-70'>Live workspace</p>
       </div>
 
       <div className='fixed bottom-32 right-16 z-50 flex h-96 flex-col items-center justify-center rounded-full text-white'>

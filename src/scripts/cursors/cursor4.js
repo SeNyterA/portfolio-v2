@@ -2,8 +2,8 @@ import { Cursors } from './../cursors'
 import { isSafari, isTouchDevices } from './../utils'
 
 export class Cursor4 extends Cursors {
-  constructor(index) {
-    super(index)
+  constructor(elementId) {
+    super(elementId)
     this.speed = !isTouchDevices ? (!isSafari ? 0.4 : 0.9) : 1
     this.delta = !isTouchDevices ? (!isSafari ? 0.15 : 0.05) : 0.2
     this.videoUrlDesktop = new URL('/video/space_desktop.mp4', import.meta.url)

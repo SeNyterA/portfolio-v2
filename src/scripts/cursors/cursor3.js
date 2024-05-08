@@ -2,8 +2,8 @@ import { Cursors } from './../cursors'
 import { isTouchDevices } from './../utils'
 
 export class Cursor3 extends Cursors {
-  constructor(index) {
-    super(index)
+  constructor(elementId) {
+    super(elementId)
     this.speed = !isTouchDevices ? 0.1 : 1
     this.init()
     this.loop()

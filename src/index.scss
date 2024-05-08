@@ -161,40 +161,49 @@ body {
 }
 
 .deco {
-	width: 100%;
-	height: 100%;
-	grid-area: 1 / 1 / -1 / -1;
-	pointer-events: none;
-	position: relative;
-	opacity: 0;
-	background: #8c718e;
-	will-change: transform, opacity;
+  width: 100%;
+  height: 100%;
+  grid-area: 1 / 1 / -1 / -1;
+  pointer-events: none;
+  position: relative;
+  opacity: 0;
+  background: #8c718e;
+  will-change: transform, opacity;
 }
 
 .deco--1 {
-	background: #d4503e;
+  background: #d4503e;
 }
 
 .deco--2 {
-	background: #1c1a1a;
+  background: #1c1a1a;
 }
 
 .deco--3 {
-	background: #4e4141;
+  background: #4e4141;
 }
 
 .deco--4 {
-	background: #000;
+  background: #000;
 }
 
 .deco--5 {
-	background: #060b17;
+  background: #060b17;
 }
 
 .deco--6 {
-	background: #34365c;
+  background: #34365c;
 }
 
 .deco--7 {
-	background: #9f6794;
+  background: #9f6794;
 }
+
+
+// .detail-skill {
+//   @apply p-8;
+//   &::before {
+//     content: "";
+//     @apply absolute inset-0 bg-black z-0;
+//   }
+// }

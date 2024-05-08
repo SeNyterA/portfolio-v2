@@ -2,8 +2,8 @@ import * as d3 from 'd3'
 import { isTouchDevices } from './utils'
 
 export class Cursors {
-  constructor(index) {
-    this.container = document.querySelector(`#cursor`)
+  constructor(elementId) {
+    this.container = document.querySelector(`#${elementId}`)
     // this.links = document.querySelectorAll(`nav[role="navigation"] a`);
     // this.link = this.links[index-1];
     // this.boundsLinks = this.link.getBoundingClientRect();
