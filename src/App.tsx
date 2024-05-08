@@ -1,20 +1,20 @@
 import { Cursor1 } from '@/scripts/cursors/cursor1'
 import { Cursor4 } from '@/scripts/cursors/cursor4'
 import { initSlides } from '@/scripts/slide/demo2'
-import { initTypeShuffle } from '@/scripts/typeShuffle'
 import {
   IconBrandGithub,
   IconChevronDown,
   IconChevronUp
 } from '@tabler/icons-react'
+import gsap from 'gsap'
 import { useEffect } from 'react'
 import AboutMe from './components/AboutMe'
 import Experience from './components/Experience'
 import Skills from './components/Skills'
-import gsap from 'gsap'
 
 export default function App() {
   useEffect(() => {
+    // initTypeShuffle()
     const slideshow = initSlides()
     new Cursor4('about-me')
     new Cursor1('skill')
@@ -29,8 +29,6 @@ export default function App() {
     })
 
     slideshow.on('onChange', (e: any) => console.log(e))
-
-    initTypeShuffle()
   }, [])
 
   return (
