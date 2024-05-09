@@ -20,31 +20,31 @@ export default function App() {
     const slides = document.querySelector('.slides')
     const slideshow = new Slideshow(slides as any)
 
-    const autoNext = gsap.to('#progress-bar', {
-      bottom: '0%',
-      duration: 10,
-      ease: 'none',
-      onRepeat: () => slideshow.next(),
-      repeat: -1
-    })
+    // const autoNext = gsap.to('#progress-bar', {
+    //   bottom: '0%',
+    //   duration: 10,
+    //   ease: 'none',
+    //   onRepeat: () => slideshow.next(),
+    //   repeat: -1
+    // })
 
     window.addEventListener('mousemove', () => {
       clearTimeout(timeOut)
-      autoNext.pause()
-      timeOut = setTimeout(() => {
-        autoNext.resume()
-      }, 400)
+      // autoNext.pause()
+      // timeOut = setTimeout(() => {
+      //   autoNext.resume()
+      // }, 400)
     })
 
     Observer.create({
       type: 'wheel,touch,pointer',
       onDown: () => {
         slideshow.prev()
-        autoNext.restart()
+        // autoNext.restart()
       },
       onUp: () => {
         slideshow.next()
-        autoNext.restart()
+        // autoNext.restart()
       },
 
       wheelSpeed: -1,
