@@ -141,7 +141,7 @@ export default function App() {
         <p className='flex items-center opacity-70'>Live workspace</p>
       </div>
 
-      <div className='fixed bottom-32 right-16 z-50 flex h-96 flex-col items-center justify-center rounded-full text-white'>
+      <div className='fixed bottom-32 right-16 z-50 flex h-72 flex-col items-center justify-center rounded-full text-white'>
         <IconChevronUp size={16} className='text-gray-500' />
         <div className='relative h-full'>
           <div

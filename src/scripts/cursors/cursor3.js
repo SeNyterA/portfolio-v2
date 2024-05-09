@@ -1,5 +1,5 @@
-import { Cursors } from './../cursors'
-import { isTouchDevices } from './../utils'
+import { Cursors } from './cursors'
+import { isTouchDevices } from './utils'
 
 export class Cursor3 extends Cursors {
   constructor(elementId) {
