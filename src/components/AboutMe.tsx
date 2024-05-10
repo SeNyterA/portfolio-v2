@@ -1,7 +1,7 @@
 export default function AboutMe() {
   return (
     <div className='content flex h-full w-full items-center gap-20 px-8 py-8 text-gray-100'>
-      <div className='mr-10 flex h-full w-fit max-w-lg flex-col items-center justify-center bg-blue-400/10 p-8'>
+      <div className='mr-10 flex h-full w-fit max-w-lg flex-col items-center justify-center bg-black p-8'>
         <p
           className='z-50 text-3xl font-black uppercase leading-10'
           style={{

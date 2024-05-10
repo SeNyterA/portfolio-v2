@@ -12,6 +12,8 @@ import AboutMe from './components/AboutMe'
 import Experience from './components/Experience'
 import Skills from './components/Skills'
 import { Slideshow } from './scripts/slide/demo2/slideshow'
+import { Cursor2 } from './scripts/cursors/cursor2'
+import { Cursor3 } from './scripts/cursors/cursor3'
 
 gsap.registerPlugin(Observer)
 export default function App() {
@@ -62,9 +64,9 @@ export default function App() {
       })
     })
 
-    // new Cursor4('about-me')
-    // new Cursor1('skill')
-    // new Cursor1('experience')
+    new Cursor4('about-me')
+    new Cursor1('skill')
+    // new Cursor3('experience')
   }, [])
 
   return (
@@ -125,15 +127,15 @@ export default function App() {
       </div>
 
       <div
-        className='fixed bottom-16 left-16 z-50 font-thin text-gray-200'
+        className='fixed bottom-16 left-16 z-50 font-light text-gray-200'
         style={{
           fontFamily: 'Attack, sans-serif'
         }}
       >
-        <p className='flex items-center opacity-70'>About me</p>
+        <p className='flex items-center'>About me</p>
         <p className='flex items-center uppercase text-lime-500'>Skills</p>
-        <p className='flex items-center opacity-70'>Experience</p>
-        <p className='flex items-center opacity-70'>Live workspace</p>
+        <p className='flex items-center'>Experience</p>
+        <p className='flex items-center'>Live workspace</p>
       </div>
 
       <div className='fixed bottom-32 right-16 z-50 flex h-72 flex-col items-center justify-center rounded-full text-white'>
