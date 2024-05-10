@@ -8,8 +8,8 @@ export default function Experience() {
     // const smooth = new Smooth()
   }, [])
   return (
-    <div className='experience-container relative h-screen w-screen p-16 text-sky-200'>
-      <div className='flex h-full max-w-md flex-1 pb-12 flex-col items-center justify-center text-justify font-light'>
+    <div className='experience-container relative flex h-screen w-screen gap-8 p-16 text-sky-200'>
+      <div className='flex h-full max-w-md flex-1 flex-col items-center justify-center pb-12 text-justify font-light'>
         <p
           className='z-50 w-full text-2xl font-black uppercase leading-10 text-transparent'
           style={{
@@ -45,13 +45,48 @@ export default function Experience() {
           solutions for a broad range of projects.
         </p>
       </div>
-
-      {/* <div className='absolute bottom-0 right-0 h-96 w-96 bg-white/20 '>
-        <figure className='item__fig js-plane'>
-          <div className='aspect-video'></div>
-          <img className='item__img hidden' src='img/13.jpg' alt='Some image' />
-        </figure>
-      </div> */}
+      <div className='relative z-10 flex-1'>
+        <div className='absolute left-1/2 flex items-center justify-center top-1/2 h-44 w-96 translate-x-[-100%] translate-y-[-100%] bg-blue-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-blue-500/60'>
+          <div
+            className='text-xl'
+            style={{
+              filter: 'drop-shadow(0 0 4px #1528d2aa)'
+            }}
+          >
+            Travel booking system
+          </div>
+        </div>
+        <div className='absolute left-1/2 flex items-center justify-center top-1/2 h-72 w-56 translate-x-[-100%] bg-red-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-red-500/60'>
+          <div
+            className='text-xl'
+            style={{
+              filter: 'drop-shadow(0 0 4px #1528d2aa)'
+            }}
+          >
+            House Inspection System
+          </div>
+        </div>
+        <div className='absolute left-1/2 flex items-center justify-center top-[50%] h-60 w-80 bg-violet-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-violet-500/60'>
+          <div
+            className='text-xl'
+            style={{
+              filter: 'drop-shadow(0 0 4px #1528d2aa)'
+            }}
+          >
+            House Inspection System
+          </div>
+        </div>
+        <div className='absolute left-1/2 flex items-center justify-center top-[50%] h-72 w-72 translate-y-[-100%] bg-gray-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-gray-500/60'>
+          <div
+            className='text-xl'
+            style={{
+              filter: 'drop-shadow(0 0 4px #1528d2aa)'
+            }}
+          >
+            House Inspection System
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

@@ -33,7 +33,8 @@ export class Cursor3 extends Cursors {
     this.strokeOpacityParticles = 0.2
     this.nbrParticles = !isTouchDevices ? 120 : 60
     this.directionRadius = '>'
-    this.radiusStart = this.diagonalWindow() / 3
+    // this.radiusStart = this.diagonalWindow() / 3
+    this.radiusStart = 60
     this.sorting = 'desc'
     this.transitionParticles = {
       duration: !isTouchDevices ? 20 : 100,

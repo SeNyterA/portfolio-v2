@@ -66,7 +66,7 @@ export default function App() {
 
     new Cursor4('about-me')
     new Cursor1('skill')
-    // new Cursor3('experience')
+    new Cursor3('experience')
   }, [])
 
   return (
