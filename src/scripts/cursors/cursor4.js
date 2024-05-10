@@ -30,7 +30,8 @@ export class Cursor4 extends Cursors {
   }
 
   setParamsParticles() {
-    this.nbrParticles = !isTouchDevices ? (!isSafari ? 120 : 15) : 40
+    // this.nbrParticles = !isTouchDevices ? (!isSafari ? 120 : 15) : 40
+    this.nbrParticles = 20
     this.radiusStart = this.diagonalWindow() / 9
     this.radiusDiff = 0.2
     this.directionRadius = '>'

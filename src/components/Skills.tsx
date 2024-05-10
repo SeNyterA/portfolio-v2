@@ -1,17 +1,18 @@
 export default function Skills() {
   return (
-    <div className='relative h-screen w-screen text-sky-400'>
-      <div className='detail-skill absolute left-16 top-24 mr-10 flex h-fit w-[40%] flex-1 flex-col items-center justify-center text-justify font-light'>
+    <div className='skills-container relative flex h-screen w-screen items-center p-16 text-sky-200'>
+      <div className='z-[2] flex h-fit max-w-lg flex-1 flex-col items-center bg-black p-10 text-justify font-light'>
         <p
-          className='z-50 w-full text-2xl font-black uppercase leading-10 text-transparent'
+          className='z-50 w-full text-2xl font-black uppercase leading-10'
           style={{
             fontFamily: 'vortice-concept, sans-serif',
-            filter: 'drop-shadow(0 0 4px #1528d2aa)',
-            WebkitTextStroke: '0.5px white'
+            filter: 'drop-shadow(0 0 4px #1528d2aa)'
           }}
         >
           Frontend
         </p>
+
+        {/* I have experience working with ReactJS (NextJS, Hook, Redux Toolkit), VueJS (NuxtJS, Vuex), Material UI, TailwindCSS, Bootstrap, Axios, and other technologies. */}
         <p className='z-50 text-base'>
           I am a skilled creator committed to designing engaging web and mobile
           experiences that prioritize user satisfaction. I possess expertise in
@@ -25,7 +26,7 @@ export default function Skills() {
           execute projects swiftly and efficiently.
         </p>
 
-        <ul className='z-50 list-inside'>
+        <ul className='z-50 list-inside text-sm'>
           <li className='indent-8'>
             Deep understanding of{' '}
             <span className='text-lime-400'>React Hook</span> and system
@@ -63,7 +64,7 @@ export default function Skills() {
         </ul>
       </div>
 
-      <div className='detail-skill absolute bottom-24 right-36 flex h-fit w-[40%] flex-1 flex-col items-center justify-center text-justify font-light'>
+      <div className='z-[2] flex h-fit max-w-lg flex-1 flex-col items-center bg-black p-10 text-justify font-light'>
         <p
           className='z-50 w-full text-2xl font-black uppercase leading-10 text-transparent'
           style={{
@@ -88,7 +89,7 @@ export default function Skills() {
           real-time functionalities to provide exceptional user experiences.
         </p>
 
-        <ul className='z-50 list-inside'>
+        <ul className='z-50 list-inside text-sm'>
           <li className='indent-8'>
             Adept at using ORM frameworks such as{' '}
             <span className='text-lime-600'>TypeORM</span>,{' '}

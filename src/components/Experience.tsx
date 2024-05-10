@@ -1,12 +1,10 @@
-import Plane from '@/scripts/wave/gl/Plane'
 import { useEffect } from 'react'
 
 export default function Experience() {
   useEffect(() => {
     // document.body.classList.remove('loading');
-
-    const elements = document.querySelectorAll('.js-plane')
-    elements.forEach((el, index) => new Plane().init(el, index))
+    // const elements = document.querySelectorAll('.js-plane')
+    // elements.forEach((el, index) => new Plane().init(el, index))
     // const smooth = new Smooth()
   }, [])
   return (

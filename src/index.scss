@@ -88,6 +88,16 @@ body {
   font-weight: 400;
 }
 
+.skills-container::after {
+  content: "";
+  @apply inset-8 absolute z-0 bg-slate-950/50;
+}
+
+.skills-container::before {
+  content: "";
+  background-image: url(/img/24.jpg);
+  @apply absolute inset-0 bg-cover;
+}
 
 @font-face {
   font-family: 'monument_extendedblack';

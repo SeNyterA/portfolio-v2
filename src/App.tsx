@@ -62,9 +62,9 @@ export default function App() {
       })
     })
 
-    new Cursor4('about-me')
-    new Cursor1('skill')
-    new Cursor1('experience')
+    // new Cursor4('about-me')
+    // new Cursor1('skill')
+    // new Cursor1('experience')
   }, [])
 
   return (
@@ -109,15 +109,10 @@ export default function App() {
             WebkitTextStroke: '0.5px white',
             filter: 'drop-shadow(0 0 4px #1528d2aa)'
           }}
-
-          // style={{
-          //   fontFamily: '"Neon Spark", sans-serif'
-          // }}
         >
           Se:Nyter'A
         </p>
         <div className='flex gap-2 text-lime-500'>
-          {/* <IconFileDownload /> */}
           <p
             className='cursor-pointer font-light'
             onClick={() => {
