@@ -1,12 +1,14 @@
+import Plane from '@/scripts/wave/gl/Plane'
 import { useEffect } from 'react'
 
 export default function Experience() {
   useEffect(() => {
     // document.body.classList.remove('loading');
-    // const elements = document.querySelectorAll('.js-plane')
-    // elements.forEach((el, index) => new Plane().init(el, index))
+    const elements = document.querySelectorAll('.js-plane')
+    elements.forEach((el, index) => new Plane().init(el, index))
     // const smooth = new Smooth()
   }, [])
+
   return (
     <div className='experience-container relative flex h-screen w-screen gap-8 p-16 text-sky-200'>
       <div className='flex h-full max-w-md flex-1 flex-col items-center justify-center pb-12 text-justify font-light'>
@@ -45,8 +47,8 @@ export default function Experience() {
           solutions for a broad range of projects.
         </p>
       </div>
-      <div className='relative z-10 flex-1'>
-        <div className='absolute left-1/2 flex items-center justify-center top-1/2 h-44 w-96 translate-x-[-100%] translate-y-[-100%] bg-blue-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-blue-500/60'>
+      {/* <div className='relative z-10 flex-1'>
+        <div className='absolute left-1/2 top-1/2 flex h-44 w-96 translate-x-[-100%] translate-y-[-100%] items-center justify-center bg-blue-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-blue-500/60'>
           <div
             className='text-xl'
             style={{
@@ -56,7 +58,7 @@ export default function Experience() {
             Travel booking system
           </div>
         </div>
-        <div className='absolute left-1/2 flex items-center justify-center top-1/2 h-72 w-56 translate-x-[-100%] bg-red-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-red-500/60'>
+        <div className='absolute left-1/2 top-1/2 flex h-72 w-56 translate-x-[-100%] items-center justify-center bg-red-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-red-500/60'>
           <div
             className='text-xl'
             style={{
@@ -66,7 +68,7 @@ export default function Experience() {
             House Inspection System
           </div>
         </div>
-        <div className='absolute left-1/2 flex items-center justify-center top-[50%] h-60 w-80 bg-violet-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-violet-500/60'>
+        <div className='absolute left-1/2 top-[50%] flex h-60 w-80 items-center justify-center bg-violet-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-violet-500/60'>
           <div
             className='text-xl'
             style={{
@@ -76,7 +78,7 @@ export default function Experience() {
             House Inspection System
           </div>
         </div>
-        <div className='absolute left-1/2 flex items-center justify-center top-[50%] h-72 w-72 translate-y-[-100%] bg-gray-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-gray-500/60'>
+        <div className='absolute left-1/2 top-[50%] flex h-72 w-72 translate-y-[-100%] items-center justify-center bg-gray-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-gray-500/60'>
           <div
             className='text-xl'
             style={{
@@ -86,7 +88,16 @@ export default function Experience() {
             House Inspection System
           </div>
         </div>
-      </div>
+      </div> */}
+
+      <figure className='item__fig js-plane absolute bottom-0 right-0 z-50'>
+        <div className='aspect-square'></div>
+        <img
+          className='item__img absolute hidden w-full'
+          src='img/13.jpg'
+          alt='Some image'
+        />
+      </figure>
     </div>
   )
 }

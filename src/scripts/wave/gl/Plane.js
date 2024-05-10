@@ -1,4 +1,3 @@
-import glsl from 'glslify';
 import gsap from 'gsap';
 import * as THREE from 'three';
 import GlObject from './GlObject';
@@ -6,10 +5,10 @@ import fragment from './glsl/fragment-01.glsl';
 import vertex from './glsl/vertex-01.glsl';
 import Gl from './index';
 
-const planeGeometry = new THREE.PlaneBufferGeometry(1, 1, 32, 32);
+const planeGeometry = new THREE.PlaneGeometry(1, 1, 32, 32);
 const planeMaterial = new THREE.ShaderMaterial({
-  vertexShader: glsl(vertex),
-  fragmentShader: glsl(fragment),
+  vertexShader: vertex,
+  fragmentShader: fragment,
 });
 
 const loader = new THREE.TextureLoader();

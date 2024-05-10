@@ -11,9 +11,8 @@ import { useEffect } from 'react'
 import AboutMe from './components/AboutMe'
 import Experience from './components/Experience'
 import Skills from './components/Skills'
-import { Slideshow } from './scripts/slide/demo2/slideshow'
-import { Cursor2 } from './scripts/cursors/cursor2'
 import { Cursor3 } from './scripts/cursors/cursor3'
+import { Slideshow } from './scripts/slide/demo2/slideshow'
 
 gsap.registerPlugin(Observer)
 export default function App() {
