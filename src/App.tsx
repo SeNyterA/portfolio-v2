@@ -13,6 +13,7 @@ import Experience from './components/Experience'
 import Skills from './components/Skills'
 import { Cursor3 } from './scripts/cursors/cursor3'
 import { Slideshow } from './scripts/slide/demo2/slideshow'
+import Plane from './scripts/wave/gl/Plane'
 
 gsap.registerPlugin(Observer)
 export default function App() {
@@ -21,42 +22,46 @@ export default function App() {
     const slides = document.querySelector('.slides')
     const slideshow = new Slideshow(slides as any)
 
-    // const autoNext = gsap.to('#progress-bar', {
-    //   bottom: '0%',
-    //   duration: 10,
-    //   ease: 'none',
-    //   onRepeat: () => slideshow.next(),
-    //   repeat: -1
-    // })
+    const elements = document.querySelector('#background-plane')
+    const bgPlane = new Plane()
+    bgPlane.init(elements, 1, '/img/samurai-2.jpeg')
+
+    const autoNext = gsap.to('#progress-bar', {
+      bottom: '0%',
+      duration: 30,
+      ease: 'none',
+      onRepeat: () => slideshow.next(),
+      repeat: -1
+    })
 
     window.addEventListener('mousemove', () => {
       clearTimeout(timeOut)
-      // autoNext.pause()
-      // timeOut = setTimeout(() => {
-      //   autoNext.resume()
-      // }, 400)
+      autoNext.pause()
+      timeOut = setTimeout(() => {
+        autoNext.resume()
+      }, 400)
     })
 
     Observer.create({
       type: 'wheel,touch,pointer',
       onDown: () => {
         slideshow.prev()
-        // autoNext.restart()
+        autoNext.restart()
       },
       onUp: () => {
         slideshow.next()
-        // autoNext.restart()
+        autoNext.restart()
       },
 
       wheelSpeed: -1,
       tolerance: 10
     })
 
+    slideshow.on('onEndChange', ({ from, to }: any) => {
+      bgPlane.setImgUrl(`/img/${Math.floor(Math.random() * 50) + 1}.jpg`)
+    })
+
     slideshow.on('onStartChange', ({ from, to }: any) => {
-      console.log({
-        from,
-        to
-      })
       gsap.to('#progress-bar-container', {
         duration: 0.8,
         clipPath: `polygon(0% 0%, 100% 0%, 100% ${to * 25}%, 0% ${to * 25}%, 0% ${(to + 1) * 25}%, 100% ${(to + 1) * 25}%, 100% 100%, 0% 100%)`
@@ -70,6 +75,7 @@ export default function App() {
 
   return (
     <>
+      <div className='fixed inset-[-100px]' id='background-plane' />
       <div className='slides'>
         <div className='slide'>
           <div
@@ -178,7 +184,7 @@ export default function App() {
         </div>
       </div>
 
-      <div className='b-8 fixed left-2 z-50 flex translate-x-[-50%] items-center justify-center gap-1 text-yellow-400'>
+      {/* <div className='b-8 fixed left-2 z-50 flex translate-x-[-50%] items-center justify-center gap-1 text-yellow-400'>
         <p
           className='font-light'
           onClick={() => {
@@ -187,7 +193,7 @@ export default function App() {
         >
           Download CV
         </p>
-      </div>
+      </div> */}
     </>
   )
 }

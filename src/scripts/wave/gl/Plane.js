@@ -14,7 +14,7 @@ const planeMaterial = new THREE.ShaderMaterial({
 const loader = new THREE.TextureLoader();
 
 export default class extends GlObject {
-  init(el, index) {
+  init(el, index, imgUrl) {
     super.init(el);
 
     this.geometry = planeGeometry;
@@ -23,12 +23,13 @@ export default class extends GlObject {
     this.material.uniforms = {
       uTexture: { value: 0 },
       uTime: { value: 0 },
-      uProg: { value: 1 },
+      uProg: { value: 0.5 },
       uIndex: { value: index },
     }
 
-    this.img = this.el.querySelector('img');
-    this.texture = loader.load(this.img.src, (texture) => {
+    this.imgUrl = imgUrl
+    // this.img = this.el.querySelector('img');
+    this.texture = loader.load(this.imgUrl, (texture) => {
       texture.minFilter = THREE.LinearFilter;
       texture.generateMipmaps = false;
 
@@ -49,6 +50,16 @@ export default class extends GlObject {
   addEvents() {
     this.mouseEnter();
     this.mouseLeave();
+  }
+
+  setImgUrl(imgUrl) {
+    this.imgUrl = imgUrl;
+    this.texture = loader.load(this.imgUrl, (texture) => {
+      texture.minFilter = THREE.LinearFilter;
+      texture.generateMipmaps = false;
+
+      this.material.uniforms.uTexture.value = texture;
+    })
   }
 
   mouseEnter() {

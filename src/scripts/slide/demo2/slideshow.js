@@ -26,23 +26,7 @@ export class Slideshow {
 		}
 	}
 
-	on(eventName, callback) {
-		if (!this.events[eventName]) {
-			this.events[eventName] = [];
-		}
-		this.events[eventName].push(callback);
-		// console.log(this.events[eventName].length)
-	}
 
-	emit(eventName, data) {
-		const event = this.events[eventName];
-		// console.log('first',event.length)
-		if (event) {
-			event.forEach(callback => {
-				callback.call(null, data);
-			});
-		}
-	}
 
 	/**
 	 * Holds references to relevant DOM elements.
