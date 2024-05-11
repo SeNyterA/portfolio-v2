@@ -11,6 +11,13 @@ export default function Experience() {
 
   return (
     <div className='experience-container relative flex h-screen w-screen gap-8 overflow-hidden p-16 text-sky-200'>
+      <figure className='js-plane fixed inset-[-100px] z-[29]'>
+        <img
+          className='item__img absolute inset-0 hidden w-full bg-cover'
+          src='img/samurai-2.jpeg'
+          alt='Some image'
+        />
+      </figure>
       <div className='flex h-full max-w-md flex-1 flex-col items-center justify-center pb-12 text-justify font-light'>
         <p
           className='z-50 w-full text-2xl font-black uppercase leading-10'
@@ -46,8 +53,8 @@ export default function Experience() {
           solutions for a broad range of projects.
         </p>
       </div>
-      {/* <div className='relative z-40 flex-1'>
-        <div className='absolute left-1/2 top-1/2 flex h-44 w-96 translate-x-[-100%] translate-y-[-100%] items-center justify-center bg-blue-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-blue-500/60'>
+      <div className='relative z-40 flex-1'>
+        <div className='absolute left-1/2 top-1/2 flex h-44 w-96 translate-x-[-100%] translate-y-[-100%] items-center justify-center bg-blue-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-blue-500/90'>
           <div
             className='text-xl'
             style={{
@@ -57,7 +64,7 @@ export default function Experience() {
             Travel booking system
           </div>
         </div>
-        <div className='absolute left-1/2 top-1/2 flex h-72 w-56 translate-x-[-100%] items-center justify-center bg-red-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-red-500/60'>
+        <div className='absolute left-1/2 top-1/2 flex h-72 w-56 translate-x-[-100%] items-center justify-center bg-red-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-red-500/90'>
           <div
             className='text-xl'
             style={{
@@ -67,7 +74,7 @@ export default function Experience() {
             House Inspection System
           </div>
         </div>
-        <div className='absolute left-1/2 top-[50%] flex h-60 w-80 items-center justify-center bg-violet-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-violet-500/60'>
+        <div className='absolute left-1/2 top-[50%] flex h-60 w-80 items-center justify-center bg-violet-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-violet-500/90'>
           <div
             className='text-xl'
             style={{
@@ -77,7 +84,7 @@ export default function Experience() {
             House Inspection System
           </div>
         </div>
-        <div className='absolute left-1/2 top-[50%] flex h-72 w-72 translate-y-[-100%] items-center justify-center bg-gray-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-gray-500/60'>
+        <div className='absolute left-1/2 top-[50%] flex h-72 w-72 translate-y-[-100%] items-center justify-center bg-gray-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-gray-500/90'>
           <div
             className='text-xl'
             style={{
@@ -87,15 +94,7 @@ export default function Experience() {
             House Inspection System
           </div>
         </div>
-      </div> */}
-
-      <figure className='js-plane fixed inset-[-100px] z-20'>
-        <img
-          className='item__img absolute inset-0 hidden w-full bg-cover z-20'
-          src='img/samurai-2.jpeg'
-          alt='Some image'
-        />
-      </figure>
+      </div>
     </div>
   )
 }

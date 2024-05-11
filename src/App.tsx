@@ -70,20 +70,20 @@ export default function App() {
 
   return (
     <>
-      <div className='slides relative'>
-        <div className='slide absolute inset-0'>
+      <div className='slides'>
+        <div className='slide'>
           <div
             className='absolute inset-0 z-10 h-screen w-screen'
             id='about-me'
           />
           <AboutMe />
         </div>
-        <div className='slide absolute inset-0'>
+        <div className='slide'>
           <div className='absolute inset-0 z-10 h-screen w-screen' id='skill' />
           <Skills />
         </div>
 
-        <div className='slide absolute inset-0'>
+        <div className='slide'>
           <div
             className='absolute inset-0 z-10 h-screen w-screen'
             id='experience'
@@ -91,7 +91,7 @@ export default function App() {
           <Experience />
         </div>
 
-        <div className='slide absolute inset-0'>
+        <div className='slide'>
           <div
             className='absolute inset-0 z-10 h-screen w-screen'
             id='cursor3'
@@ -179,8 +179,6 @@ export default function App() {
       </div>
 
       <div className='b-8 fixed left-2 z-50 flex translate-x-[-50%] items-center justify-center gap-1 text-yellow-400'>
-        {/* <div className='mr-4 h-[1px] w-20 rounded bg-yellow-400'></div> */}
-        {/* <IconInnerShadowTopRightFilled /> */}
         <p
           className='font-light'
           onClick={() => {
@@ -189,7 +187,6 @@ export default function App() {
         >
           Download CV
         </p>
-        {/* <div className='ml-4 h-[1px] w-20 rounded bg-yellow-400'></div> */}
       </div>
     </>
   )

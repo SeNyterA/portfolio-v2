@@ -23,7 +23,7 @@ export default class extends GlObject {
     this.material.uniforms = {
       uTexture: { value: 0 },
       uTime: { value: 0 },
-      uProg: { value: 0 },
+      uProg: { value: 1 },
       uIndex: { value: index },
     }
 
@@ -54,7 +54,7 @@ export default class extends GlObject {
   mouseEnter() {
     this.el.addEventListener('mouseenter', () => {
       gsap.to(this.material.uniforms.uProg, {
-        // duration: 1,
+        duration: 1,
         value: 1,
         ease: 'power.inOut',
       });
@@ -64,7 +64,7 @@ export default class extends GlObject {
   mouseLeave() {
     this.el.addEventListener('mouseleave', () => {
       gsap.to(this.material.uniforms.uProg, {
-        // duration: 1,
+        duration: 1,
         value: 0,
         ease: 'power.inOut',
       });

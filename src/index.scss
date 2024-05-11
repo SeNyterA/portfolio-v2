@@ -2,65 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 @font-face {
-  font-family: "Neon Spark";
-  src: url("/fonts/neonspark.otf") format("opentype");
+  font-family: 'Neon Spark';
+  src: url('/fonts/neonspark.otf') format('opentype');
 }
 
 @font-face {
-  font-family: "Attack";
-  src: url("/fonts/attack/Black.woff") format("woff");
+  font-family: 'Attack';
+  src: url('/fonts/attack/Black.woff') format('woff');
   font-weight: 900;
 }
 
 @font-face {
-  font-family: "Attack";
-  src: url("/fonts/attack/Bold.woff") format("woff");
+  font-family: 'Attack';
+  src: url('/fonts/attack/Bold.woff') format('woff');
   font-weight: 700;
 }
 
 @font-face {
-  font-family: "Attack";
-  src: url("/fonts/attack/ExtraBold.woff") format("woff");
+  font-family: 'Attack';
+  src: url('/fonts/attack/ExtraBold.woff') format('woff');
   font-weight: 800;
 }
 
 @font-face {
-  font-family: "Attack";
-  src: url("/fonts/attack/ExtraLight.woff") format("woff");
+  font-family: 'Attack';
+  src: url('/fonts/attack/ExtraLight.woff') format('woff');
   font-weight: 200;
 }
 
 @font-face {
-  font-family: "Attack";
-  src: url("/fonts/attack/Light.woff") format("woff");
+  font-family: 'Attack';
+  src: url('/fonts/attack/Light.woff') format('woff');
   font-weight: 300;
 }
 
 @font-face {
-  font-family: "Attack";
-  src: url("/fonts/attack/Medium.woff") format("woff");
+  font-family: 'Attack';
+  src: url('/fonts/attack/Medium.woff') format('woff');
   font-weight: 500;
 }
 
 @font-face {
-  font-family: "Attack";
-  src: url("/fonts/attack/Regular.woff") format("woff");
+  font-family: 'Attack';
+  src: url('/fonts/attack/Regular.woff') format('woff');
   font-weight: 400;
 }
 
 @font-face {
-  font-family: "Attack";
-  src: url("/fonts/attack/SemiBold.woff") format("woff");
+  font-family: 'Attack';
+  src: url('/fonts/attack/SemiBold.woff') format('woff');
   font-weight: 600;
 }
 
 @font-face {
-  font-family: "Attack";
-  src: url("/fonts/attack/Thin.woff") format("woff");
+  font-family: 'Attack';
+  src: url('/fonts/attack/Thin.woff') format('woff');
   font-weight: 100;
 }
 
@@ -80,6 +79,14 @@ pre {
   margin: 0;
 }
 
+/* VARS */
+:root {
+  --dark: #181825;
+  --white: #ffffff;
+  --primary: #3effe8;
+  --secondary: #342243;
+}
+
 body {
   font-family: Lato, sans-serif;
   font-optical-sizing: auto;
@@ -88,71 +95,13 @@ body {
   font-weight: 400;
 }
 
-.skills-container {
-  &::after {
-    content: "";
-    // @apply inset-8 absolute z-0 bg-slate-950/50;
-  }
-
-  &::before {
-    content: "";
-    // background-image: url(/img/24.jpg);
-    @apply absolute inset-0 bg-cover;
-  }
-}
-
-.experience-container {
-  &::after {
-    content: "";
-    @apply inset-8 absolute z-0 bg-slate-950/50;
-  }
-
-  &::before {
-    content: "";
-    // background-image: url(/img/25.jpg);
-    @apply absolute inset-0 bg-cover;
-  }
-}
-
-
-@font-face {
-  font-family: 'monument_extendedblack';
-  src: url('./fonts/monumentextended-black-webfont.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'monument_extendedbold';
-  src: url('./fonts/monumentextended-bold-webfont.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'monument_extendedregular';
-  src: url('./fonts/monumentextended-regular-webfont.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'monument_extendedultralight';
-  src: url('./fonts/monumentextended-ultralight-webfont.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* VARS */
-:root {
-  --dark: #181825;
-  --white: #ffffff;
-  --primary: #3EFFE8;
-  --secondary: #8C0FEE;
+.dom-gl {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .slides {
@@ -163,88 +112,96 @@ body {
   grid-template-rows: 100%;
   grid-template-columns: 100%;
   place-items: center;
+
+  .slide {
+    width: 100%;
+    height: 100%;
+    grid-area: 1 / 1 / -1 / -1;
+    pointer-events: none;
+    opacity: 0;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    place-items: center;
+    will-change: transform, opacity;
+  }
+
+  .slide--current {
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  .slide__img {
+    width: 120%;
+    height: 120%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    will-change: transform, opacity, filter;
+  }
+
+  .deco {
+    width: 100%;
+    height: 100%;
+    grid-area: 1 / 1 / -1 / -1;
+    pointer-events: none;
+    position: relative;
+    opacity: 0;
+    background: #8c718e;
+    will-change: transform, opacity;
+  }
+
+  .deco--1 {
+    background: #d4503e;
+  }
+
+  .deco--2 {
+    background: #1c1a1a;
+  }
+
+  .deco--3 {
+    background: #4e4141;
+  }
+
+  .deco--4 {
+    background: #000;
+  }
+
+  .deco--5 {
+    background: #060b17;
+  }
+
+  .deco--6 {
+    background: #34365c;
+  }
+
+  .deco--7 {
+    background: #9f6794;
+  }
 }
 
-.slide {
-  width: 100%;
-  height: 100%;
-  grid-area: 1 / 1 / -1 / -1;
-  pointer-events: none;
-  opacity: 0;
-  overflow: hidden;
-  position: relative;
-  display: grid;
-  place-items: center;
-  will-change: transform, opacity;
+.skills-container {
+  &::after {
+    content: '';
+    @apply absolute inset-8 z-0 bg-slate-950/50;
+  }
+
+  &::before {
+    content: '';
+    // background-image: url(/img/24.jpg);
+    @apply absolute inset-0 bg-cover;
+  }
 }
 
-.slide--current {
-  pointer-events: auto;
-  opacity: 1;
-}
+.experience-container {
+  &::after {
+    content: '';
+    @apply absolute inset-8 z-0 bg-slate-950/50;
+  }
 
-.slide__img {
-  width: 120%;
-  height: 120%;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  will-change: transform, opacity, filter;
-}
-
-.deco {
-  width: 100%;
-  height: 100%;
-  grid-area: 1 / 1 / -1 / -1;
-  pointer-events: none;
-  position: relative;
-  opacity: 0;
-  background: #8c718e;
-  will-change: transform, opacity;
-}
-
-.deco--1 {
-  background: #d4503e;
-}
-
-.deco--2 {
-  background: #1c1a1a;
-}
-
-.deco--3 {
-  background: #4e4141;
-}
-
-.deco--4 {
-  background: #000;
-}
-
-.deco--5 {
-  background: #060b17;
-}
-
-.deco--6 {
-  background: #34365c;
-}
-
-.deco--7 {
-  background: #9f6794;
-}
-
-
-// .detail-skill {
-//   @apply p-8;
-//   &::before {
-//     content: "";
-//     @apply absolute inset-0 bg-black z-0;
-//   }
-// }
-
-.dom-gl {
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  &::before {
+    content: '';
+    // background-image: url(/img/25.jpg);
+    @apply absolute inset-0 bg-cover;
+  }
 }
