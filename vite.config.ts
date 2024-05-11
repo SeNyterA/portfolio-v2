@@ -1,12 +1,10 @@
 import path from 'path'
 import terser from '@rollup/plugin-terser'
-import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import glsl from 'vite-plugin-glsl'
 
 export default defineConfig({
   plugins: [
-    react(),
     terser(),
     glsl({
       watch: false

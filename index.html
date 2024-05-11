@@ -1,14 +1,497 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-    <link rel="stylesheet" href="https://use.typekit.net/dxg2qrg.css">
+    <link rel="stylesheet" href="https://use.typekit.net/dxg2qrg.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/index.scss" />
     <title>Se:Nyter'A</title>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body class="relative">
+    <script type="module" src="/src/main.ts"></script>
+
+    <div class="slides">
+      <div class="slide">
+        <div
+          class="absolute inset-0 z-10 h-screen w-screen"
+          id="about-me"
+        ></div>
+
+        <div
+          class="content flex h-full w-full items-center gap-20 px-8 py-8 text-gray-100"
+        >
+          <div
+            class="mr-10 flex h-full w-fit max-w-lg flex-col items-center justify-center bg-black p-8"
+          >
+            <p
+              class="z-50 text-3xl font-black uppercase leading-10"
+              style="
+                font-family: vortice-concept, sans-serif;
+                filter: drop-shadow(0 0 4px #1528d2aa);
+              "
+            >
+              Nguyen Duc Khang
+            </p>
+            <p
+              class="z-50 mt-2 cursor-text text-justify text-lg font-light text-sky-400"
+            >
+              I'm a <span class="text-lime-500">Full-Stack Developer</span> with
+              <span class="text-lime-500">2+ years</span> of experience in
+              creating scalable web applications. My skills include
+              <span class="text-lime-500">NodeJS</span> (
+              <span class="text-lime-500">NestJS</span>),
+              <span class="text-lime-500">ReactJS</span>(
+              <span class="text-lime-500">NextJS</span>),
+              <span class="text-lime-500">TypeScript</span>,
+              <span class="text-lime-500">RESTful APIs</span>,
+              <span class="text-lime-500">GraphQL</span>, and
+              <span class="text-lime-500">database technologies</span>. I'm
+              passionate about building user-centric software with exceptional
+              user experiences. My workflow is optimized through
+              <span class="text-lime-500">Git</span>,
+              <span class="text-lime-500">Docker</span>,
+              <span class="text-lime-500">AWS</span> and
+              <span class="text-lime-500">Agile/Scrum methodologies</span>. I'm
+              seeking a challenging opportunity to contribute my skills to a
+              fast-paced and innovative team.
+            </p>
+          </div>
+          <div class="flex-1">
+            <!-- <IconInnerShadowTopRightFilled size={32} fill='yellow' /> -->
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="absolute inset-0 z-10 h-screen w-screen" id="skill"></div>
+        <div
+          class="skills-container relative flex h-screen w-screen items-center justify-center p-16 text-sky-200"
+        >
+          <div class="flex gap-8">
+            <div
+              class="z-[2] flex max-w-lg flex-1 translate-y-8 flex-col items-center bg-slate-950/80 p-10 text-justify font-light"
+            >
+              <p
+                class="z-50 w-full text-2xl font-black uppercase leading-10"
+                style="
+                  font-family: vortice-concept, sans-serif;
+                  filter: drop-shadow(0 0 4px #1528d2aa);
+                "
+              >
+                Frontend
+              </p>
+
+              <p class="z-50 text-base">
+                I am a skilled creator committed to designing engaging web and
+                mobile experiences that prioritize user satisfaction. I possess
+                expertise in advanced technologies like
+                <span class="text-lime-400">ReactJS</span> ,
+                <span class="text-lime-400">NextJS</span> and
+                <span class="text-lime-400">React Native</span> which I utilize
+                to build complex, high-performance applications. With a strong
+                foundation and the necessary skills, I adeptly tackle the
+                challenges of frontend development, leveraging my expertise and
+                supplementary libraries to execute projects swiftly and
+                efficiently.
+              </p>
+
+              <ul class="z-50 mt-4 list-inside list-disc text-sm">
+                <li>
+                  Deep understanding of
+                  <span class="text-lime-400">React Hook</span> and system
+                  optimization techniques to ensure optimal performance and user
+                  experience.
+                </li>
+                <li>
+                  For building basic and advanced web structures, a strong
+                  command of <span class="text-lime-400">HTML</span>,
+                  <span class="text-lime-400">CSS</span>,
+                  <span class="text-lime-400">SCSS</span>,
+                  <span class="text-lime-400">Responsive</span> and
+                  <span class="text-lime-400">TailwindCSS</span> is essential.
+                </li>
+                <li>
+                  Utilize popular UI libraries such as
+                  <span class="text-lime-400">Ant Design</span>,
+                  <span class="text-lime-400">MaterialUI</span>, and
+                  <span class="text-lime-400">Mantine</span> to create visually
+                  appealing and intuitive user interfaces.
+                </li>
+                <li>
+                  Specialized in handling and managing state management,
+                  particularly <span class="text-lime-400">Redux</span>, for
+                  complex systems.
+                </li>
+                <li>
+                  Mastered <span class="text-lime-400">Axios</span>,
+                  <span class="text-lime-400">RESTful API</span> (
+                  <span class="text-lime-400">SWR</span>,
+                  <span class="text-lime-400">ReactQuery</span>) and
+                  <span class="text-lime-400">Graphql</span> (
+                  <span class="text-lime-400">ApolloClient</span>) for efficient
+                  data access.
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="z-[2] flex max-w-lg flex-1 -translate-y-8 flex-col items-center bg-black p-10 text-justify font-light"
+            >
+              <p
+                class="z-50 w-full text-2xl font-black uppercase leading-10 text-transparent"
+                style="
+                  font-family: vortice-concept, sans-serif;
+                  filter: drop-shadow(0 0 4px #1528d2aa);
+                  -webkit-text-stroke: 1px #fff;
+                "
+              >
+                Backend
+              </p>
+              <p class="z-50 text-base">
+                I have a specialization in developing robust and real-time
+                systems. Building high-performance server-side solutions is my
+                passion and I use
+                <span class="text-lime-400">NodeJS</span> and
+                <span class="text-lime-400">NestJS</span> to create APIs and
+                backend services that meet the highest standards of performance
+                and scalability. My expertise also includes designing and
+                implementing <span class="text-lime-400">RESTful APIs</span> and
+                <span class="text-lime-400">GraphQL</span> to facilitate
+                flexible and efficient data access. With my extensive
+                experience, I have a proven track record of optimizing
+                application speed and building real-time functionalities to
+                provide exceptional user experiences.
+              </p>
+
+              <ul class="z-50 mt-4 list-inside list-disc text-sm">
+                <li>
+                  Adept at using ORM frameworks such as
+                  <span class="text-lime-400">TypeORM</span>,
+                  <span class="text-lime-400">Prisma</span> for efficient data
+                  modeling and seamless database interaction with
+                  <span class="text-lime-400">MySQL</span>,
+                  <span class="text-lime-400">PostgreSQL</span>, and
+                  <span class="text-lime-400">MongoDB</span>.
+                </li>
+                <li>
+                  Implement real-time features using
+                  <span class="text-lime-400">SocketIO</span> and leverage
+                  <span class="text-lime-400">Redis</span> for caching and data
+                  storage optimization.
+                </li>
+                <li>
+                  Proficient in both Object-Oriented Programming (OOP),
+                  Functional Programming, and Design Patterns.
+                </li>
+                <li>
+                  Using tools like
+                  <span class="text-lime-400">Docker</span>,
+                  <span class="text-lime-400">AWS</span>, and
+                  <span class="text-lime-400">Nginx</span> for development and
+                  deployment processes, management, and automation.
+                </li>
+                <li>
+                  Having a comprehensive knowledge of information security
+                  practices is crucial.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div
+          class="absolute inset-0 z-10 h-screen w-screen"
+          id="experience"
+        ></div>
+
+        <div
+          class="experience-container relative flex h-screen w-screen gap-8 overflow-hidden p-16 text-sky-200"
+        >
+          <div
+            class="flex h-full max-w-md flex-1 flex-col items-center justify-center pb-12 text-justify font-light"
+          >
+            <p
+              class="z-50 w-full text-2xl font-black uppercase leading-10"
+              style="
+                font-family: vortice-concept, sans-serif;
+                filter: drop-shadow(0 0 4px #1528d2aa);
+              "
+            >
+              TGL Solutions
+            </p>
+            <p class="z-50 text-base">
+              I started as a
+              <span class="text-lime-400">
+                FullStack Developer intern in March 2022
+              </span>
+              and transitioned to
+              <span class="text-lime-400">full-time in April 2022</span>. I work
+              for a company that provides outsourcing services and my
+              responsibilities include participating in product development
+              projects.
+            </p>
+            <p class="z-50 mt-4 text-base">
+              Throughout my professional career, I have acquired extensive and
+              varied experience in software development. This experience
+              encompasses a range of different projects, including both in-house
+              development work and outsourced work for third-party clients. I
+              have been involved in a multitude of projects, each utilizing
+              different technologies and methodologies, each of which has
+              presented its own unique challenges. I have worked across a
+              variety of software development areas, from FrontEnd development
+              to BackEnd development and real-time communication management.
+              This experience has made me an adaptable and dependable developer,
+              capable of providing high-quality software solutions for a broad
+              range of projects.
+            </p>
+          </div>
+          <div class="z-10 m-10 flex flex-1 items-center justify-center">
+            <div class="w-full" id="award">
+              <img
+                class="z-50 h-full w-full object-contain"
+                src="img/award.jpeg"
+                alt="Experience design"
+              />
+            </div>
+          </div>
+
+          <div class="absolute inset-8 z-[-100] opacity-0 bg-sky-950/[98] text-sm font-light">
+            <div
+              class="group absolute left-1/2 top-1/2 flex h-[40%] w-[40%] translate-x-[-100%] translate-y-[-100%] items- z-50end justify-end overflow-hidden bg-blue-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-blue-500/90"
+            >
+              <div class="p-4">
+                <p
+                  style="
+                    font-family: vortice-concept, sans-serif;
+                    -webkit-text-stroke: 0.5px white;
+                    filter: drop-shadow(0 0 4px #1528d2aa);
+                  "
+                >
+                  01. House Inspection System
+                </p>
+                <p class="">
+                  This project involves a web and mobile application system that
+                  is designed to conduct surveys and evaluations of construction
+                  works and apartment buildings. The main purpose of this
+                  project is to provide a convenient and efficient way to assess
+                  the condition and quality of these structures.
+                </p>
+                <p>
+                  Role:
+                  <span class="text-blue-600">
+                    Frontend, Backend, Mobile developer
+                  </span>
+                </p>
+                <p>
+                  My contributions: I contributed to a project involving surveys
+                  and evaluations of construction works and apartments. I worked
+                  on frontend, backend, and mobile app roles. I used ReactJS,
+                  Tailwind CSS, Ant Design, Redux, React Hook Form, and React
+                  DND Beautiful for the frontend. For the backend, I used NestJS
+                  and MongoDB, and for the mobile app, I used React Native. I
+                  optimized performance for handling large amounts of data in
+                  forms and integrated GraphQL with Apollo Client for efficient
+                  data retrieval and manipulation.
+                </p>
+              </div>
+            </div>
+            <div
+              class="absolute left-1/2 top-1/2 flex h-[35%] w-[30%] translate-x-[-100%] items-center z-50 justify-center overflow-hidden bg-red-500/20 p-4 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-red-500/90"
+            >
+              <div class="p-4">
+                <p
+                  style="
+                    font-family: vortice-concept, sans-serif;
+                    -webkit-text-stroke: 0.5px white;
+                    filter: drop-shadow(0 0 4px #1528d2aa);
+                  "
+                >
+                  03. Custom open-source
+                </p>
+
+                <p>
+                  The aim of this project is to improve the functionality of
+                  Mattermost, an open-source code, to facilitate better
+                  communication operations, follow-up communication, task
+                  management, and internal company processes. The main goal is
+                  to enhance the user interface and incorporate additional
+                  features that can seamlessly connect with other company
+                  systems, creating a more cohesive ecosystem. This approach
+                  aims to increase operational efficiency and streamline the
+                  management of internal activities.
+                </p>
+                <p>Role: <span class="text-blue-600">Frontend</span></p>
+                <p>
+                  I have made significant contributions by customizing and
+                  improving the open-source code of Mattermost. My work involved
+                  enhancing the user interface to make it more user-friendly and
+                  integrating additional features with other systems used by the
+                  company. These changes resulted in improved communication
+                  efficiency and simplified management of internal processes.
+                </p>
+              </div>
+            </div>
+            <div
+              class="absolute left-1/2 top-[50%] flex h-[40%] w-[35%] items-center z-50 justify-center overflow-hidden bg-violet-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-violet-500/90"
+            >
+              <div class="p-4">
+                <p
+                  style="
+                    font-family: vortice-concept, sans-serif;
+                    -webkit-text-stroke: 0.5px white;
+                    filter: drop-shadow(0 0 4px #1528d2aa);
+                  "
+                >
+                  04. Travel booking system
+                </p>
+                <p>
+                  This project aims to renew an outdated logistics system using
+                  new technologies based on customer requirements. The process
+                  will involve generating ideas for improvements, implementing
+                  necessary upgrades and integrations, and overhauling the
+                  entire system to make it more efficient and functional.
+                </p>
+                <p>
+                  Role:
+                  <span class="text-blue-600">Frontend, Backend developer</span>
+                </p>
+                <p>
+                  My contributions: I built easily usable and reusable
+                  components, upgraded and maintained them. I organized modules
+                  to shorten project development time and enhance efficiency. I
+                  utilized NextJS, React Query, Ant Design, Tailwind CSS, React
+                  Hook Form, TypeScript, and styled components to create a
+                  visually appealing, responsive, and well-structured project.
+                </p>
+              </div>
+            </div>
+            <div
+              class="absolute left-1/2 top-[50%] flex h-[30%] w-[45%] translate-y-[-100%] items-center z-50 justify-center overflow-hidden bg-gray-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-gray-500/90"
+            >
+              <div class="p-4">
+                <p
+                  style="
+                    font-family: vortice-concept, sans-serif;
+                    -webkit-text-stroke: 0.5px white;
+                    filter: drop-shadow(0 0 4px #1528d2aa);
+                  "
+                >
+                  02. Finaccel module
+                </p>
+                <p>
+                  A booking system built with Next.js caters to businesses
+                  needing a web-based platform optimized for mobile devices. Its
+                  responsive design ensures accessibility across all devices
+                  with web browsers, providing an efficient solution for
+                  integration within clients' webviews. This approach minimizes
+                  costs while enhancing convenience and user experience.
+                </p>
+                <p>
+                  Role: <span class="text-blue-600">Frontend developer</span>
+                </p>
+                <p>
+                  My contributions: I integrated Firebase authentication with
+                  webviews and created a visually appealing UI using Ant Design
+                  and Tailwind CSS. I used SWR for efficient data fetching and
+                  socket.io for instant communication, while NestJS, Laravel
+                  Echo and Firebase served as reliable backend services for
+                  real-time communication and messaging functionality to support
+                  the booking system.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="absolute inset-0 z-10 h-screen w-screen" id="cursor3"></div>
+      </div>
+      <div class="deco deco--4"></div>
+      <div class="deco deco--4"></div>
+    </div>
+
+    <div class="fixed inset-[-100px]" id="background-plane"></div>
+    <div
+      class="fixed inset-x-16 top-8 z-50 flex h-14 items-center justify-between gap-2 text-white"
+    >
+      <p
+        class="uppercase text-gray-100"
+        style="
+          font-family: vortice-concept, sans-serif;
+          filter: drop-shadow(0 0 4px #1528d2aa);
+        "
+      >
+        Se:Nyter'A
+      </p>
+      <div class="flex gap-2 text-lime-500">
+        <p
+          class="cursor-pointer font-light"
+          onclick="window.open('/NguyenDucKhang.pdf')"
+        >
+          CV
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="fixed bottom-16 left-16 z-50 font-light text-gray-200"
+      style="font-family: Attack, sans-serif"
+    >
+      <p class="flex items-center">About me</p>
+      <p class="flex items-center uppercase text-lime-500">Skills</p>
+      <p class="flex items-center">Experience</p>
+      <p class="flex items-center">Live workspace</p>
+    </div>
+
+    <div
+      class="fixed bottom-32 right-16 z-50 flex h-72 flex-col items-center justify-center rounded-full text-white"
+    >
+      <!-- <IconChevronUp size={16} class="text-gray-500" /> -->
+      <div class="relative h-full">
+        <div
+          class="relative h-full w-0.5 rounded bg-gray-500"
+          style="
+            clip-path: polygon(
+              0% 0%,
+              100% 0%,
+              100% 25%,
+              0% 25%,
+              0% 50%,
+              100% 50%,
+              100% 100%,
+              0% 100%
+            );
+          "
+          id="progress-bar-container"
+        >
+          <div
+            class="absolute inset-x-0 top-0 bg-white"
+            id="progress-bar"
+          ></div>
+        </div>
+        <div
+          id="page-index"
+          class="absolute left-1/2 top-1/4 flex h-1/4 translate-x-[-50%] items-center justify-center text-xs font-light text-white"
+        >
+          <span class="translate-x-[-4px] translate-y-[-4px]">2</span>/<span
+            class="translate-x-[4px] translate-y-[4px]"
+            >4</span
+          >
+        </div>
+      </div>
+      <!-- <IconChevronDown size={16} class="text-gray-500" /> -->
+      <div
+        class="mt-6 flex flex-col items-center justify-center gap-2 text-yellow-500"
+      >
+        <p
+          class="rotate-180 font-thin"
+          style="writing-mode: vertical-rl; font-family: 'Attack, sans-serif'"
+        >
+          Github
+        </p>
+        <!-- <IconBrandGithub size={16} class="rotate-[270deg]" /> -->
+      </div>
+    </div>
   </body>
 </html>
