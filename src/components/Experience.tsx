@@ -5,7 +5,7 @@ export default function Experience() {
   useEffect(() => {
     // document.body.classList.remove('loading');
     const elements = document.querySelectorAll('.js-plane')
-    elements.forEach((el, index) => new Plane().init(el, 1))
+    elements.forEach(el => new Plane().init(el, 1))
     // const smooth = new Smooth()
   }, [])
 
