@@ -247,7 +247,7 @@
             </p>
           </div>
           <div class="z-10 m-10 flex flex-1 items-center justify-center">
-            <div class="w-full" id="award">
+            <div class="w-full max-w-screen-lg" id="award">
               <img
                 class="z-50 h-full w-full object-contain"
                 src="img/award.jpeg"
@@ -256,9 +256,11 @@
             </div>
           </div>
 
-          <div class="absolute inset-8 z-[-100] opacity-0 bg-sky-950/[98] text-sm font-light">
+          <div
+            class="absolute inset-8 z-[-100] bg-sky-950/[98] text-sm font-light opacity-0"
+          >
             <div
-              class="group absolute left-1/2 top-1/2 flex h-[40%] w-[40%] translate-x-[-100%] translate-y-[-100%] items- z-50end justify-end overflow-hidden bg-blue-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-blue-500/90"
+              class="items- z-50end group absolute left-1/2 top-1/2 flex h-[40%] w-[40%] translate-x-[-100%] translate-y-[-100%] justify-end overflow-hidden bg-blue-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-blue-500/90"
             >
               <div class="p-4">
                 <p
@@ -297,7 +299,7 @@
               </div>
             </div>
             <div
-              class="absolute left-1/2 top-1/2 flex h-[35%] w-[30%] translate-x-[-100%] items-center z-50 justify-center overflow-hidden bg-red-500/20 p-4 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-red-500/90"
+              class="absolute left-1/2 top-1/2 z-50 flex h-[35%] w-[30%] translate-x-[-100%] items-center justify-center overflow-hidden bg-red-500/20 p-4 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-red-500/90"
             >
               <div class="p-4">
                 <p
@@ -333,7 +335,7 @@
               </div>
             </div>
             <div
-              class="absolute left-1/2 top-[50%] flex h-[40%] w-[35%] items-center z-50 justify-center overflow-hidden bg-violet-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-violet-500/90"
+              class="absolute left-1/2 top-[50%] z-50 flex h-[40%] w-[35%] items-center justify-center overflow-hidden bg-violet-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-violet-500/90"
             >
               <div class="p-4">
                 <p
@@ -367,7 +369,7 @@
               </div>
             </div>
             <div
-              class="absolute left-1/2 top-[50%] flex h-[30%] w-[45%] translate-y-[-100%] items-center z-50 justify-center overflow-hidden bg-gray-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-gray-500/90"
+              class="absolute left-1/2 top-[50%] z-50 flex h-[30%] w-[45%] translate-y-[-100%] items-center justify-center overflow-hidden bg-gray-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-gray-500/90"
             >
               <div class="p-4">
                 <p
@@ -441,24 +443,24 @@
       <p class="flex items-center">About me</p>
       <p class="flex items-center uppercase text-lime-500">Skills</p>
       <p class="flex items-center">Experience</p>
-      <p class="flex items-center">Live workspace</p>
+      <p class="flex items-center">Contact</p>
     </div>
 
     <div
-      class="fixed bottom-32 right-16 z-50 flex h-72 flex-col items-center justify-center rounded-full text-white"
+      class="fixed bottom-32 right-16 z-50 flex flex-col items-center justify-center rounded-full text-white"
     >
-      <!-- <IconChevronUp size={16} class="text-gray-500" /> -->
-      <div class="relative h-full">
+      <i class="ti ti-chevron-up"></i>
+      <div class="relative h-48">
         <div
           class="relative h-full w-0.5 rounded bg-gray-500"
           style="
             clip-path: polygon(
               0% 0%,
               100% 0%,
-              100% 25%,
+              100% 0%,
+              0% 0%,
               0% 25%,
-              0% 50%,
-              100% 50%,
+              100% 25%,
               100% 100%,
               0% 100%
             );
@@ -472,26 +474,46 @@
         </div>
         <div
           id="page-index"
-          class="absolute left-1/2 top-1/4 flex h-1/4 translate-x-[-50%] items-center justify-center text-xs font-light text-white"
+          class="absolute left-1/2 top-0 flex h-1/4 translate-x-[-50%] items-center justify-center text-xs font-light text-white"
         >
-          <span class="translate-x-[-4px] translate-y-[-4px]">2</span>/<span
+          <span class="translate-x-[-4px] translate-y-[-4px]">1</span>/<span
             class="translate-x-[4px] translate-y-[4px]"
             >4</span
           >
         </div>
       </div>
-      <!-- <IconChevronDown size={16} class="text-gray-500" /> -->
-      <div
-        class="mt-6 flex flex-col items-center justify-center gap-2 text-yellow-500"
+      <i class="ti ti-chevron-down"></i>
+
+      <a
+        href="https://github.com/SeNyterA"
+        target="_blank"
+        class="mt-6 cursor-pointer text-xl transition-colors duration-300 hover:text-yellow-400"
       >
-        <p
-          class="rotate-180 font-thin"
-          style="writing-mode: vertical-rl; font-family: 'Attack, sans-serif'"
-        >
-          Github
-        </p>
-        <!-- <IconBrandGithub size={16} class="rotate-[270deg]" /> -->
-      </div>
+        <i class="ti ti-brand-github-filled"></i>
+      </a>
+
+      <a
+        href="https://www.facebook.com/senytera"
+        class="mt-4 cursor-pointer text-xl transition-colors duration-300 hover:text-yellow-400"
+      >
+        <i class="ti ti-brand-facebook-filled"></i>
+      </a>
+
+      <a
+        target="_blank"
+        href="tel:84849630412"
+        class="mt-4 cursor-pointer text-xl transition-colors duration-300 hover:text-yellow-400"
+      >
+        <i class="ti ti-phone-filled"></i>
+      </a>
+
+      <a
+        href="mailto:senytera@gmail.com"
+        target="_blank"
+        class="mt-4 cursor-pointer text-xl transition-colors duration-300 hover:text-yellow-400"
+      >
+        <i class="ti ti-mail-filled"></i>
+      </a>
     </div>
   </body>
 </html>
