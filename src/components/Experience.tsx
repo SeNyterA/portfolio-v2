@@ -5,19 +5,18 @@ export default function Experience() {
   useEffect(() => {
     // document.body.classList.remove('loading');
     const elements = document.querySelectorAll('.js-plane')
-    elements.forEach((el, index) => new Plane().init(el, index))
+    elements.forEach((el, index) => new Plane().init(el, 1))
     // const smooth = new Smooth()
   }, [])
 
   return (
-    <div className='experience-container relative flex h-screen w-screen gap-8 p-16 text-sky-200'>
+    <div className='experience-container relative flex h-screen w-screen gap-8 overflow-hidden p-16 text-sky-200'>
       <div className='flex h-full max-w-md flex-1 flex-col items-center justify-center pb-12 text-justify font-light'>
         <p
-          className='z-50 w-full text-2xl font-black uppercase leading-10 text-transparent'
+          className='z-50 w-full text-2xl font-black uppercase leading-10'
           style={{
             fontFamily: 'vortice-concept, sans-serif',
-            filter: 'drop-shadow(0 0 4px #1528d2aa)',
-            WebkitTextStroke: '0.5px white'
+            filter: 'drop-shadow(0 0 4px #1528d2aa)'
           }}
         >
           TGL Solutions
@@ -47,7 +46,7 @@ export default function Experience() {
           solutions for a broad range of projects.
         </p>
       </div>
-      {/* <div className='relative z-10 flex-1'>
+      {/* <div className='relative z-40 flex-1'>
         <div className='absolute left-1/2 top-1/2 flex h-44 w-96 translate-x-[-100%] translate-y-[-100%] items-center justify-center bg-blue-500/20 transition-all duration-700 hover:h-1/2 hover:w-1/2 hover:bg-blue-500/60'>
           <div
             className='text-xl'
@@ -90,11 +89,10 @@ export default function Experience() {
         </div>
       </div> */}
 
-      <figure className='item__fig js-plane absolute bottom-0 right-0 z-50'>
-        <div className='aspect-square'></div>
+      <figure className='js-plane fixed inset-[-100px] z-20'>
         <img
-          className='item__img absolute hidden w-full'
-          src='img/13.jpg'
+          className='item__img absolute inset-0 hidden w-full bg-cover z-20'
+          src='img/samurai-2.jpeg'
           alt='Some image'
         />
       </figure>
