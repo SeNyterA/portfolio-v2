@@ -1,4 +1,3 @@
-import glsl from 'glslify';
 import gsap from 'gsap';
 import * as THREE from 'three';
 import GlObject from './GlObject';
@@ -6,16 +5,16 @@ import fragment from './glsl/fragment-01.glsl';
 import vertex from './glsl/vertex-01.glsl';
 import Gl from './index';
 
-const planeGeometry = new THREE.PlaneBufferGeometry(1, 1, 32, 32);
+const planeGeometry = new THREE.PlaneGeometry(1, 1, 32, 32);
 const planeMaterial = new THREE.ShaderMaterial({
-  vertexShader: glsl(vertex),
-  fragmentShader: glsl(fragment),
+  vertexShader: vertex,
+  fragmentShader: fragment,
 });
 
 const loader = new THREE.TextureLoader();
 
 export default class extends GlObject {
-  init(el, index) {
+  init(el, index, imgUrl) {
     super.init(el);
 
     this.geometry = planeGeometry;
@@ -24,12 +23,13 @@ export default class extends GlObject {
     this.material.uniforms = {
       uTexture: { value: 0 },
       uTime: { value: 0 },
-      uProg: { value: 0 },
+      uProg: { value: 0.5 },
       uIndex: { value: index },
     }
 
-    this.img = this.el.querySelector('img');
-    this.texture = loader.load(this.img.src, (texture) => {
+    this.imgUrl = imgUrl
+    // this.img = this.el.querySelector('img');
+    this.texture = loader.load(this.imgUrl, (texture) => {
       texture.minFilter = THREE.LinearFilter;
       texture.generateMipmaps = false;
 
@@ -52,10 +52,20 @@ export default class extends GlObject {
     this.mouseLeave();
   }
 
+  setImgUrl(imgUrl) {
+    this.imgUrl = imgUrl;
+    this.texture = loader.load(this.imgUrl, (texture) => {
+      texture.minFilter = THREE.LinearFilter;
+      texture.generateMipmaps = false;
+
+      this.material.uniforms.uTexture.value = texture;
+    })
+  }
+
   mouseEnter() {
     this.el.addEventListener('mouseenter', () => {
       gsap.to(this.material.uniforms.uProg, {
-        // duration: 1,
+        duration: 1,
         value: 1,
         ease: 'power.inOut',
       });
@@ -65,7 +75,7 @@ export default class extends GlObject {
   mouseLeave() {
     this.el.addEventListener('mouseleave', () => {
       gsap.to(this.material.uniforms.uProg, {
-        // duration: 1,
+        duration: 1,
         value: 0,
         ease: 'power.inOut',
       });

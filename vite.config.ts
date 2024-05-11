@@ -1,15 +1,13 @@
 import path from 'path'
 import terser from '@rollup/plugin-terser'
-import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
-import string from 'vite-plugin-string'
+import glsl from 'vite-plugin-glsl'
 
 export default defineConfig({
   plugins: [
-    react(),
     terser(),
-    string({
-      include: '**/*.glsl'
+    glsl({
+      watch: false
     })
   ],
   server: {
@@ -23,6 +21,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src')
     }
   },
+
   build: {
     minify: true,
     rollupOptions: {
