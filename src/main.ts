@@ -60,8 +60,8 @@ window.addEventListener('DOMContentLoaded', () => {
       })
     })
 
-    // new Cursor4('about-me')
-    // new Cursor1('skill')
-    // new Cursor3('experience')
+    new Cursor4('about-me')
+    new Cursor1('skill')
+    new Cursor3('experience')
   }, 0)
 })
