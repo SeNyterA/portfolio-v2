@@ -95,8 +95,6 @@ export class Slideshow {
 		this.navigate(PREV);
 	}
 
-
-
 	/**
 	 * Navigate through slides.
 	 * @param {number} direction - The direction to navigate. 1 for next and -1 for previous.
@@ -172,4 +170,67 @@ export class Slideshow {
 
 	}
 
+	goTo(index) {
+		// Check if animation is already running
+		if (this.isAnimating || index === this.current || index < 0 || index >= this.slidesTotal) return false;
+		this.isAnimating = true;
+		// Update the current slide index based on direction
+		const previous = this.current;
+		this.current = index;
+
+		this.emit('onStartChange', { from: previous, to: this.current });
+
+		// Get the current and upcoming slides and their inner elements
+		const currentSlide = this.DOM.slides[previous];
+		const currentInner = this.DOM.slidesInner[previous];
+		const upcomingSlide = this.DOM.slides[this.current];
+		const upcomingInner = this.DOM.slidesInner[this.current];
+
+		// Animation sequence using GSAP
+		gsap
+			.timeline({
+				defaults: {
+					duration: 0.8,
+					ease: 'power3.inOut'
+				},
+				onComplete: () => {
+					// Reset animation flag
+					this.isAnimating = false;
+					this.emit('onEndChange', { from: previous, toIndex: this.current });
+				}
+			})
+			// Defining animation steps
+			.addLabel('start', 0)
+
+			.fromTo(this.DOM.deco, {
+				yPercent: pos => pos ? -100 : 100,
+				autoAlpha: 1
+			}, {
+				yPercent: pos => pos ? -50 : 50
+			}, 'start')
+			.to(currentSlide, {
+				scale: 1.1
+			}, 'start')
+
+			.addLabel('middle', '>')
+			.add(() => {
+				// Remove class from the previous slide to unmark it as current
+				this.DOM.slides[previous].classList.remove('slide--current');
+				// Add class to the upcoming slide to mark it as current
+				this.DOM.slides[this.current].classList.add('slide--current');
+			}, 'middle')
+			.to(this.DOM.deco, {
+				duration: 1.1,
+				ease: 'expo',
+				yPercent: pos => pos ? -100 : 100
+			}, 'middle')
+
+			.fromTo(upcomingSlide, {
+				scale: 1.1
+			}, {
+				duration: 1.1,
+				ease: 'expo',
+				scale: 1
+			}, 'middle');
+	}
 }
