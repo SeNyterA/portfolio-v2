@@ -4,6 +4,7 @@ import { Observer } from 'gsap/Observer'
 import { Cursor1 } from './scripts/cursors/cursor1'
 import { Slideshow } from './scripts/slide/demo2/slideshow'
 import Plane from './scripts/wave/gl/Plane'
+import { Cursor4 } from './scripts/cursors/cursor4'
 
 gsap.registerPlugin(Observer)
 
@@ -114,7 +115,7 @@ window.addEventListener('DOMContentLoaded', () => {
   //   })
   // })
 
-  new Cursor1('about-me')
+  new Cursor4('cursor-wapper')
 
   // new Cursor1('skill')
   // new Cursor1('experience')
