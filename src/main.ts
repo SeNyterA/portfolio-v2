@@ -1,9 +1,6 @@
 import '@tabler/icons-webfont/dist/tabler-icons.scss'
 import gsap from 'gsap'
 import { Observer } from 'gsap/Observer'
-import { Cursor1 } from './scripts/cursors/cursor1'
-import { Cursor3 } from './scripts/cursors/cursor3'
-import { Cursor4 } from './scripts/cursors/cursor4'
 import { Slideshow } from './scripts/slide/demo2/slideshow'
 import Plane from './scripts/wave/gl/Plane'
 
@@ -16,11 +13,11 @@ window.addEventListener('DOMContentLoaded', () => {
   const menuContainer = document.getElementById('menu-container')!
   const elements = document.querySelector('#background-plane')
   const bgPlane = new Plane()
-  bgPlane.init(elements, 1, '/img/samurai-2.jpeg')
+  bgPlane.init(elements, 1, '/img/1.jpg')
 
   const autoNext = gsap.to('#progress-bar', {
     bottom: '0%',
-    duration: 10,
+    duration: 1000,
     ease: 'none',
     onRepeat: () => slideshow.next(),
     repeat: -1
@@ -54,7 +51,7 @@ window.addEventListener('DOMContentLoaded', () => {
       bgPlane.setImgUrl(`/img/${to}.jpg`)
     }, 400)
 
-    menuContainer.setAttribute('data-active-index', (to+1).toString())
+    menuContainer.setAttribute('data-active-index', (to + 1).toString())
 
     gsap.to('#page-index span:first-child', {
       duration: 0.4,
@@ -80,17 +77,38 @@ window.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  document.querySelector
-
-  new Cursor4('about-me')
-  new Cursor1('skill')
-  new Cursor3('experience')
-
-
+  document.getElementById('prev-page')!.addEventListener('click', () => {
+    slideshow.prev()
+  })
+  document.getElementById('next-page')!.addEventListener('click', () => {
+    slideshow.next()
+  })
   Array.from(menuContainer.children).forEach((menuItem, index) => {
     menuItem.addEventListener('click', () => {
       slideshow.goTo(index)
-      menuContainer.setAttribute('data-active-index', (index + 1).toString())
     })
   })
+
+  const gridItems = document.querySelectorAll('[data-grid-item]')
+
+  gridItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      // gsap.to(item, {
+      //   duration: 0,
+      //   gridArea: '1 / 1 / 31 / 31',
+      //   z: 100
+      // })
+    })
+
+    item.addEventListener('mouseleave', () => {
+      // gsap.to(item, {
+      //   duration: 0.3,
+      //   scale: 1
+      // })
+    })
+  })
+
+  // new Cursor4('about-me')
+  // new Cursor1('skill')
+  // new Cursor3('experience')
 })

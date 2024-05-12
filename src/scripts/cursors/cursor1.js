@@ -10,7 +10,7 @@ export class Cursor1 extends Cursors {
   }
 
   setParamsCursor() {
-    this.radiusCursor = 15
+    this.radiusCursor = 8
     this.fillCursor = getComputedStyle(document.body).getPropertyValue(
       '--primary'
     )

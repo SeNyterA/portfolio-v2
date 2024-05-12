@@ -117,6 +117,9 @@ body {
     width: 100%;
     height: 100%;
     grid-area: 1 / 1 / -1 / -1;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
     pointer-events: none;
     opacity: 0;
     overflow: hidden;
@@ -144,6 +147,9 @@ body {
     width: 100%;
     height: 100%;
     grid-area: 1 / 1 / -1 / -1;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
     pointer-events: none;
     position: relative;
     opacity: 0;
@@ -206,8 +212,71 @@ body {
   }
 }
 
+.projects-container {
+  &::after {
+    content: '';
+    @apply absolute inset-8 z-[-1] bg-slate-950/50;
+  }
+
+  // &::before {
+  //   content: '';
+  //   // background-image: url(/img/25.jpg);
+  //   @apply absolute inset-0 bg-cover;
+  // }
+}
 
 
+.grid-layout {
+  padding: 32px;
+  display: grid;
+  gap: 8px;
+  z-index: 50;
+  grid-auto-rows: calc((calc(100vh - 64px) / 30) - 8px);
+  grid-auto-columns: calc((calc(100vw - 64px) / 30) - 8px);
+
+  .grid-item {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    z-index: 50;
+    padding: 12px;
+  }
+
+  .grid-item:nth-child(1) {
+    grid-area: 10 / 3 / 21 / 13;
+    // background-image: url(../img/6.jpg);
+  }
+
+  .grid-item:nth-child(2) {
+    grid-area: 1 / 6 / 10 / 13;
+    // background-image: url(../img/8.jpg);
+  }
+
+  .grid-item:nth-child(3) {
+    grid-area: 19 / 13 / 29 / 19;
+    // background-image: url(../img/12.jpg);
+  }
+
+  .grid-item:nth-child(4) {
+    grid-area: 5 / 13 / 19 / 21;
+    // background-image: url(../img/14.jpg);
+  }
+
+  .grid-item:nth-child(5) {
+    grid-area: 19 / 19 / 27 / 28;
+    // background-image: url(../img/18.jpg);
+  }
+
+  .grid-item:nth-child(6) {
+    grid-area: 9 / 21 / 19 / 26;
+    // background-image: url(../img/5.jpg);
+  }
+
+  .grid-item:nth-child(7) {
+    grid-area: 21 / 4 / 26 / 13;
+  }
+
+}
 
 #menu-container {
   div {
@@ -249,6 +318,4 @@ body {
       @apply absolute top-1/2 translate-y-[-50%] w-4 h-0.5 bg-lime-500 translate-x-[-100%] -left-2;
     }
   }
-
-
 }
