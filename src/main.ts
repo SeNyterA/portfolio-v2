@@ -1,10 +1,9 @@
 import '@tabler/icons-webfont/dist/tabler-icons.scss'
 import gsap from 'gsap'
 import { Observer } from 'gsap/Observer'
-import { Cursor4 } from './scripts/cursors/cursor4'
+import { Cursor1 } from './scripts/cursors/cursor1'
 import { Slideshow } from './scripts/slide/demo2/slideshow'
 import Plane from './scripts/wave/gl/Plane'
-import { Cursor1 } from './scripts/cursors/cursor1'
 
 gsap.registerPlugin(Observer)
 
@@ -115,7 +114,7 @@ window.addEventListener('DOMContentLoaded', () => {
   //   })
   // })
 
-  const aboutMeCusor = new Cursor1('about-me')
+  new Cursor1('about-me')
 
   // new Cursor1('skill')
   // new Cursor1('experience')
