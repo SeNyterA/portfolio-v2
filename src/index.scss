@@ -229,16 +229,20 @@ body {
 .grid-layout {
   padding: 32px;
   display: grid;
-  gap: 8px;
+  gap: 0px;
   z-index: 50;
-  grid-auto-rows: calc((calc(100vh - 64px) / 30) - 8px);
-  grid-auto-columns: calc((calc(100vw - 64px) / 30) - 8px);
+  grid-auto-rows: calc((calc(100vh - 64px) / 30) - 0px);
+  grid-auto-columns: calc((calc(100vw - 64px) / 30) - 0px);
 
   .grid-item {
+    margin: 2px;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
     z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 12px;
   }
 

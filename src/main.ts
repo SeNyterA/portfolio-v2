@@ -92,19 +92,23 @@ window.addEventListener('DOMContentLoaded', () => {
   const gridItems = document.querySelectorAll('[data-grid-item]')
 
   gridItems.forEach(item => {
+    // const oldGirdArea = item.style.gridArea
     item.addEventListener('mouseenter', () => {
-      // gsap.to(item, {
-      //   duration: 0,
-      //   gridArea: '1 / 1 / 31 / 31',
-      //   z: 100
-      // })
+      gsap.to(item, {
+        duration: 0.5,
+        // gridArea: '1 / 1 / 31 / 31',
+        scale: 1.2,
+        z: 100
+      })
     })
 
     item.addEventListener('mouseleave', () => {
-      // gsap.to(item, {
-      //   duration: 0.3,
-      //   scale: 1
-      // })
+      gsap.to(item, {
+        duration: 0.5,
+        // gridArea: oldGirdArea,
+        scale: 1,
+        z: 100
+      })
     })
   })
 
