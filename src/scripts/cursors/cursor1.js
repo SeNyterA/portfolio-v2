@@ -30,7 +30,7 @@ export class Cursor1 extends Cursors {
     this.radiusStart = this.radiusCursor * 3
     this.nbrParticles = Math.round(
       (this.diagonalWindow() + this.radiusDiff - this.radiusStart) /
-        this.radiusDiff
+      this.radiusDiff
     )
     this.transitionParticles = {
       duration: 18,

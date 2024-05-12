@@ -4,6 +4,7 @@ import { Observer } from 'gsap/Observer'
 import { Cursor4 } from './scripts/cursors/cursor4'
 import { Slideshow } from './scripts/slide/demo2/slideshow'
 import Plane from './scripts/wave/gl/Plane'
+import { Cursor1 } from './scripts/cursors/cursor1'
 
 gsap.registerPlugin(Observer)
 
@@ -18,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const autoNext = gsap.to('#progress-bar', {
     bottom: '0%',
-    duration: 1000,
+    duration: 10,
     ease: 'none',
     onRepeat: () => slideshow.next(),
     repeat: -1
@@ -114,7 +115,7 @@ window.addEventListener('DOMContentLoaded', () => {
   //   })
   // })
 
-  const aboutMeCusor = new Cursor4('about-me')
+  const aboutMeCusor = new Cursor1('about-me')
 
   // new Cursor1('skill')
   // new Cursor1('experience')
