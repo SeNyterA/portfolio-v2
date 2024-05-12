@@ -3,6 +3,7 @@ import { isTouchDevices } from './utils'
 
 export class Cursors {
   constructor(elementId) {
+    this.active = true
     this.container = document.querySelector(`#${elementId}`)
     // this.links = document.querySelectorAll(`nav[role="navigation"] a`);
     // this.link = this.links[index-1];
@@ -21,6 +22,10 @@ export class Cursors {
     window.addEventListener('resize', e => this.init())
   }
 
+  toogle(active) {
+    this.active = active
+  }
+
   mousemoveCursor() {
     window.addEventListener(
       isTouchDevices ? 'touchmove' : 'mousemove',
@@ -30,6 +35,7 @@ export class Cursors {
       { passive: true }
     )
   }
+
 
   updateCoordinates(e) {
     if (e.type.match('touch')) {
@@ -55,9 +61,11 @@ export class Cursors {
   }
 
   loop() {
-    this.setParamsDiffs()
-    this.tinyCursor ? this.setTinyCursor() : null
-    this.setParticles()
+    if (this.active) {
+      this.setParamsDiffs()
+      this.tinyCursor ? this.setTinyCursor() : null
+      this.setParticles()
+    }
     requestAnimationFrame(() => this.loop())
   }
 

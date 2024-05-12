@@ -142,7 +142,7 @@ export class Slideshow {
 			}, 'start')
 			.to(currentSlide, {
 				scale: 1.1,
-				rotation: direction * 2
+				// rotation: direction * 2
 			}, 'start')
 
 			.addLabel('middle', '>')
@@ -160,7 +160,7 @@ export class Slideshow {
 
 			.fromTo(upcomingSlide, {
 				scale: 1.1,
-				rotation: direction * 2
+				// rotation: direction * 2
 			}, {
 				duration: 1.1,
 				ease: 'expo',
