@@ -1,10 +1,9 @@
 import '@tabler/icons-webfont/dist/tabler-icons.scss'
 import gsap from 'gsap'
 import { Observer } from 'gsap/Observer'
-import { Cursor1 } from './scripts/cursors/cursor1'
+import { Cursor4 } from './scripts/cursors/cursor4'
 import { Slideshow } from './scripts/slide/demo2/slideshow'
 import Plane from './scripts/wave/gl/Plane'
-import { Cursor4 } from './scripts/cursors/cursor4'
 
 gsap.registerPlugin(Observer)
 
